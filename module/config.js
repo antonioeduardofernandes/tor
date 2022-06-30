@@ -7,7 +7,9 @@ TOR.base = {
     effects: "TOR.effects",
     basicInfo: "TOR.basicInfo",
     proficiency: "TOR.proficiency",
-    weaponType: "TOR.weaponType",
+    type: "TOR.type",
+    protection: "TOR.protection",
+    parry: "TOR.parry",
 }
 
 TOR.itemStats = {
@@ -19,8 +21,18 @@ TOR.itemStats = {
     firstReward: "TOR.firstReward",
     secondReward: "TOR.secondReward",
     thirdReward: "TOR.thirdReward",
-    craftmanship: "TOR.craftmanship",
-    bane: "TOR.bane"
+    craftsmanship: "TOR.craftsmanship",
+    bane: "TOR.bane",
+    minimumLiving: "TOR.minimumLiving",
+}
+
+TOR.standardOfLiving = {
+    poor: "TOR.poor",
+    frugal: "TOR.frugal",
+    common: "TOR.common",
+    prosperous: "TOR.prosperous",
+    rich: "TOR.rich",
+    veryRich: "TOR.veryRich",
 }
 
 TOR.weaponTypes = {
@@ -29,11 +41,24 @@ TOR.weaponTypes = {
     thrown: "TOR.thrown",
 }
 
+TOR.armorTypes = {
+    leather: "TOR.leather",
+    mail: "TOR.mail",
+    headgear: "TOR.headgear",
+}
+
+TOR.craftsmanship = {
+    elven: "TOR.elven",
+    dwarven: "TOR.dwarven",
+    numenorean: "TOR.numenorean",
+}
+
 TOR.proficiencies = {
-    "axes": "TOR.proficiencyAxes",
-    "bows": "TOR.proficiencyBows",
-    "lances": "TOR.proficiencyLances",
-    "swords": "TOR.proficiencySwords"
+    "axes": "TOR.axes",
+    "bows": "TOR.bows",
+    "lances": "TOR.lances",
+    "swords": "TOR.swords",
+    "brawling": "TOR.brawling"
 }
 
 TOR.weaponRewards = {

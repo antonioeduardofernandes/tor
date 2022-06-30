@@ -41,8 +41,20 @@
         </select>
       </div>
       <div class="form-group">
-        <label class="stat">{{localize config.itemStats.load}}</label>
-        <input type="text" name="data.load" value="{{data.load}}">
+        <label class="stat">{{localize config.base.type}}</label>
+        <select name="data.weaponType">
+          {{#select data.weaponType}}
+          <option value="">Selecione</option>
+          {{#each config.weaponTypes as |name key|}}
+          <option value="{{key}}">{{localize name}}</option>
+          {{/each}}
+          {{/select}}
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="stat">{{localize config.itemStats.damage}}</label>
+        <input type="text" name="data.damage" value="{{data.damage}}">
       </div>
       <div class="form-group">
         <label class="stat">{{localize config.itemStats.injury}}</label>
@@ -53,21 +65,22 @@
         <input type="text" name="data.piercingBlow" value="{{data.piercingBlow}}">
       </div>
       <div class="form-group">
-        <label class="stat">{{localize config.base.weaponType}}</label>
-        <select name="data.weaponType">
-          {{#select data.weaponType}}
-          <option value="">Selecione</option>
-          {{#each config.weaponTypes as |name key|}}
+        <label class="stat">{{localize config.itemStats.load}}</label>
+        <input type="text" name="data.load" value="{{data.load}}">
+      </div>
+
+      <div class="form-group">
+        <label class="stat">{{localize config.itemStats.craftsmanship}}</label>
+        <select name="data.craftsmanship">
+          {{#select data.craftsmanship}}
+          <option value="">Desconhecida</option>
+          {{#each config.craftsmanship as |name key|}}
           <option value="{{key}}">{{localize name}}</option>
           {{/each}}
           {{/select}}
         </select>
       </div>
-      <!-- <div class="form-group">
-        <input type="checkbox" name="data.canBeTwoHanded" value="{{checked data.canBeTwoHanded}}">
-        <label>{{localize config.itemStats.canBeTwoHanded}}</label>
-      </div> -->
-
+      
       <div class="section-header">Recompensas</div>
       <div class="form-group">
         <label class="stat">{{localize config.itemStats.firstReward}}</label>

@@ -75,7 +75,7 @@
     "Item": {
         "types": [
             "weapon",
-            "armour",
+            "armor",
             "shield",
             "mount",
             "reward",
@@ -93,7 +93,7 @@
                 "equiped": false
             },
             "warGear": {
-                "craftmanship": "",
+                "craftsmanship": "",
                 "rewards": {
                     "first": "",
                     "second": "",
@@ -119,18 +119,21 @@
                 "third": ""
             }
         },
-        "culture":{
-            "templates":["base"],
-            "living":""
+        "culture": {
+            "templates": [
+                "base"
+            ],
+            "standardOfLiving": ""
         },
-
-        "armour": {
+        "armor": {
             "templates": [
                 "base",
                 "gear",
                 "warGear"
             ],
-            "protection": 0
+            "protection": 0,
+            "minimumLiving": "",
+            "armorType": ""
         },
         "shield": {
             "templates": [
@@ -143,7 +146,8 @@
             "templates": [
                 "base"
             ],
-            "vigour": 0
+            "vigour": 0,
+            "minimumLiving": ""
         }
     }
 }

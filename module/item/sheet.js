@@ -1,6 +1,25 @@
 
 export class TORItemSheet extends ItemSheet {
 
+  constructor(...args) {
+    super(...args);
+
+    // Expand the default size of the class sheet
+    if (this.object.data.type === "weapon") {
+      this.options.height = this.position.height = 670;
+    }
+    if (this.object.data.type === "armor") {
+      this.options.height = this.position.height = 600;
+    }
+    if (this.object.data.type === "shield") {
+      this.options.height = this.position.height = 480;
+    }
+    if (this.object.data.type === "mount") {
+      this.options.height = this.position.height = 380;
+    }
+  }
+
+
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ["tor", "sheet", "item"],
@@ -23,33 +42,35 @@ export class TORItemSheet extends ItemSheet {
     const itemData = data.data;
     data.config = CONFIG.TOR
 
-    //GET ITEM DATA FROM TRANSLATION FILE
+    //localizes item general type
     data.itemType = game.i18n.localize(`ITEM.Type${data.item.type.titleCase()}`)
 
-    //GET WEAPON TYPE AND GROUP
+    //localizes item types and proficiency groups
     if (data.item.type === "weapon") {
-      data.type = this._getWeaponType(itemData)
       data.weaponGroup = this._getWeaponGroup(itemData)
     }
+    if (data.item.type === "weapon" || data.item.type === "armor") {
+      data.type = this._getItemType(itemData)
+    }
 
+
+    //boilerplate content
     data.item = itemData;
     data.data = itemData.data;
     return data;
   }
 
-
-
-  _getWeaponType(itemData) {
-    if (itemData.type !== "weapon") return
-    return itemData.data.weaponType ? game.i18n.localize(`TOR.${(itemData.data.weaponType)}`) : ""
+  // gets type of the item and returns it localized
+  _getItemType(itemData) {
+    if (itemData.type === "weapon") return itemData.data.weaponType ? game.i18n.localize(`TOR.${(itemData.data.weaponType)}`) : ""
+    if (itemData.type === "armor") return itemData.data.armorType ? game.i18n.localize(`TOR.${(itemData.data.armorType)}`) : ""
   }
 
+  // gets weapon proficiency group and returns it localized
   _getWeaponGroup(itemData) {
     if (itemData.type !== "weapon") return
     return itemData.data.proficiency ? game.i18n.localize(`TOR.${(itemData.data.proficiency)}`) : ""
   }
-
-
 
 
 
