@@ -171,6 +171,7 @@
 
 .tor.sheet header .row {
   border-bottom: 2px groove #eeede0;
+  min-height: 38px;
 }
 
 .tor.sheet .stats_container .stats {

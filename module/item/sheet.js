@@ -1,4 +1,3 @@
-import { TOR } from "../config";
 
 export class TORItemSheet extends ItemSheet {
 
@@ -14,7 +13,7 @@ export class TORItemSheet extends ItemSheet {
 
 
   get template() {
-    let path = "systems/TOR.templates/sheets/items/"
+    const path = "systems/tor/templates/item"
     return `${path}/${this.item.data.type}.html`;
   }
 

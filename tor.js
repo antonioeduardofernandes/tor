@@ -1,7 +1,7 @@
 import { TOR } from "./module/config.js"
 
-import { TORItemSheet } from "./module/item/sheet.js"
 import { TORActorSheet } from "./module/actor/sheet.js"
+import { TORItemSheet } from "./module/item/sheet.js"
 
 
 
