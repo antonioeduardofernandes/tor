@@ -1,0 +1,70 @@
+{
+    "ITEM.TypeArmour": "Armadura",
+    "ITEM.TypeWeapon": "Arma",
+    "ITEM.TypeShield": "Escudo",
+    "ITEM.TypeMount": "Montaria",
+    "ITEM.TypeReward": "Recompensa",
+    "ITEM.TypeVirtue": "Virtude",
+    "ITEM.TypeUsefulitem": "Item Útil",
+    "ITEM.TypeTrait": "Característica Distintiva",
+    "ITEM.TypeFellability": "Habilidade Terrível",
+
+    "ACTOR.TypeHero":"Herói",
+    "ACTOR.TypeFellowship":"Comitiva",
+    "ACTOR.TypePatron":"Patrono",
+    "ACTOR.TypeAdversary":"Adversário",
+
+    "TOR.rewards":"recompensas",
+    "TOR.virtues":"virtudes",
+    "TOR.details":"detalhes",
+    "TOR.effects":"efeitos",
+    "TOR.basicInfo":"infomações Básicas",
+    "TOR.proficiency":"proficiência",
+
+    "TOR.axes":"machados",
+    "TOR.bows":"arcos",
+    "TOR.lances":"lanças",
+    "TOR.swords":"espadas",
+
+    "TOR.ranged":"à distância",
+    "TOR.melee":"corpo-a-corpo",
+    "TOR.thrown":"arremesso",
+
+    "TOR.weaponType": "tipo da arma",
+    "TOR.load":"carga",
+    "TOR.damage":"dano",
+    "TOR.injury":"trauma",
+    "TOR.twoHanded":"duas mãos",
+    "TOR.piercingBlow":"golpe perfurante",
+    "TOR.vigour":"vigor",
+    "TOR.craftmanship":"manufatura",
+    "TOR.bane":"condenação",
+    "TOR.canBeTwoHanded":"pode ser utilizada com 2 mãos",
+
+    "TOR.firstReward":"primeira recompensa",
+    "TOR.secondReward":"segunda recompensa",
+    "TOR.thirdReward":"terceira recompensa",
+
+    
+    "TOR.proficiencyAxes": "machados",
+    "TOR.proficiencyBows": "arcos",
+    "TOR.proficiencyLances": "lanças",
+    "TOR.proficiencySwords": "espadas",
+
+    "TOR.rewardsFell": "feroz",
+    "TOR.rewardsGrievous": "atroz",
+    "TOR.rewardsKeen": "afiada",
+
+    "TOR.rewardsSuperiorFell": "feroz superior",
+    "TOR.rewardsSuperiorGrievous": "atroz superior",
+    "TOR.rewardsSuperiorKeen": "afiada superior",
+    "TOR.rewardsCleaving": "trespassar",
+    "TOR.rewardsFlameOfHope": "chama da esperança",
+    "TOR.rewardsFoeSlaying": "matadora",
+    "TOR.rewardsGleamOfTerror": "brilho de terror",
+    "TOR.rewardsHammering": "batedora",
+    "TOR.rewardsHollowSteel": "lâmina côncava",
+    "TOR.rewardsLuminescence": "luminescência",
+    "TOR.rewardsRuneScored": "com runas",
+    "TOR.rewardsStraightFlight": "vôo certeiro"
+}

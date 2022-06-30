@@ -1,0 +1,144 @@
+{
+    "Actor": {
+        "types": [
+            "hero",
+            "fellowship",
+            "patron",
+            "adversary"
+        ],
+        "hero": {
+            "background": "",
+            "fellowshipFocus": [],
+            "traits": [],
+            "culture": "",
+            "culturalBlessing": "",
+            "standardOfLiving": "",
+            "calling": "",
+            "shadowPath": "",
+            "resources": {
+                "hope": {
+                    "current": 10,
+                    "max": 10
+                },
+                "endurance": {
+                    "current": 10,
+                    "max": 10
+                }
+            },
+            "attributes": {
+                "strength": {
+                    "value": 4,
+                    "tn": 16
+                },
+                "heart": {
+                    "value": 4,
+                    "tn": 16
+                },
+                "wits": {
+                    "value": 4,
+                    "tn": 16
+                }
+            },
+            "stature": {
+                "valour": {
+                    "value": 1,
+                    "favoured": {
+                        "value": false,
+                        "type": "Boolean"
+                    },
+                    "valour": {
+                        "value": 1,
+                        "favoured": {
+                            "value": false,
+                            "type": "Boolean"
+                        }
+                    }
+                }
+            }
+        },
+        "fellowship": {
+            "patrons": [],
+            "allies": [],
+            "fellowshipPoints": {
+                "max": 0,
+                "value": 0,
+                "type": "Number"
+            },
+            "companions": [],
+            "eyeAwareness": {
+                "current": 0,
+                "default": 0,
+                "type": "Number"
+            }
+        }
+    },
+    "Item": {
+        "types": [
+            "weapon",
+            "armour",
+            "shield",
+            "mount",
+            "reward",
+            "virtue",
+            "usefulItem",
+            "trait",
+            "fellAbility"
+        ],
+        "templates": {
+            "base": {
+                "description": ""
+            },
+            "gear": {
+                "load": 0,
+                "equiped": false
+            },
+            "warGear": {
+                "craftmanship": "",
+                "rewards": {
+                    "first": "",
+                    "second": "",
+                    "third": ""
+                }
+            }
+        },
+        "weapon": {
+            "templates": [
+                "base",
+                "gear",
+                "warGear"
+            ],
+            "proficiency": "",
+            "weaponType": "",
+            "bane": "",
+            "damage": 1,
+            "injury": 10,
+            "piercingBlow": 10,
+            "rewards": {
+                "first": "",
+                "second": "",
+                "third": ""
+            }
+        },
+        "armour": {
+            "templates": [
+                "base",
+                "gear",
+                "warGear"
+            ],
+            "protection": 0
+        },
+        "shield": {
+            "templates": [
+                "base",
+                "gear"
+            ],
+            "parry": 0
+        },
+        "mount": {
+            "templates": [
+                "base"
+            ],
+            "vigour": 0
+        }
+    }
+}

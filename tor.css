@@ -1,0 +1,212 @@
+/* ----------------------------------------- */
+/*  Fonts                                    */
+/* ----------------------------------------- */
+
+.tor.sheet>* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Modesto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../../fonts//Modesto\ Condensed\ Light.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Modesto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../../fonts/Modesto\ Condensed\ Bold.ttf') format('ttf');
+}
+
+/* ----------------------------------------- */
+/*  GLOBAL VARIABLES                           
+/* ----------------------------------------- */
+
+:root {
+  --red: #9b282a;
+  --text-color: #000000;
+  --text-color-light: #585858;
+  --modesto: "Modesto Condensed";
+  --signika: "Signika";
+  --divider-color: #C1BFB3;
+}
+
+/* ----------------------------------------- */
+/*  Element Styles                           */
+/* ----------------------------------------- */
+
+.tor input[type="text"],
+.tor input[type="number"],
+.tor select {
+  border: 1px solid #7a7971;
+  color: var(--text-color);
+}
+
+.tor input[type="text"]:hover,
+.tor input[type="number"]:hover,
+.tor input[type="checkbox"]:hover,
+.tor input[type="text"]:focus,
+.tor input[type="number"]:focus,
+.tor input[type="checkbox"]:focus {
+  border: 1px solid var(--text-color);
+}
+
+.tor input:disabled,
+.tor select:disabled,
+.tor textarea:disabled {
+  color: var(--text-color);
+  border: 1px solid transparent !important;
+  outline: none !important;
+}
+
+.tor select,
+.tor option,
+.tor label {
+  text-transform: capitalize;
+}
+
+.tor input:disabled:hover,
+.tor select:disabled:hover,
+.tor textarea:disabled:hover,
+.tor input:disabled:focus,
+.tor select:disabled:focus,
+.tor textarea:disabled:focus {
+  box-shadow: none !important;
+  border: 1px solid transparent !important;
+  outline: none !important;
+}
+
+.tor button {
+  background: rgba(0, 0, 0, 0.1);
+  border: 2px groove #eeede0;
+}
+
+.tor .grouped-checkboxes div {
+  display: flex;
+  align-items: center;
+}
+
+.tor .checkbox-container label {
+  white-space: nowrap;
+}
+
+.grouped-checkboxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+/* ----------------------------------------- */
+/*  NAVIGATION                                    */
+/* ----------------------------------------- */
+
+.tor.sheet .sheet-navigation {
+  margin: 1rem 0 .5rem 0;
+  font-family: var(--modesto), "Palatino Linotype", serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.tor.sheet .sheet-navigation .item {
+  height: 30px;
+  line-height: 32px;
+  border-bottom: 3px solid #b5b3a4;
+}
+
+.tor.sheet .sheet-navigation .item.active {
+  color: var(--red);
+  border-bottom: 3px solid var(--red);
+}
+
+
+/* ----------------------------------------- */
+/*  SHEET                                    */
+/* ----------------------------------------- */
+.tor.sheet {
+  overflow: hidden;
+  padding: .5rem;
+  background: url("ui/parchment.jpg") repeat;
+  color: var(--text-color);
+}
+
+.tor.sheet .sheet-body {
+  display: flex;
+  flex-flow: column;
+  font-family: var(--signika);
+  font-size: var(--font-size);
+}
+
+.tor.sheet h4.window-title {
+  font-size: 28px;
+  font-family: var(--modesto);
+}
+
+.tor.sheet .window-content {
+  font-size: var(--font-size);
+  padding: .5rem 0;
+}
+
+.tor.sheet header {
+  display: flex;
+  align-items: center;
+}
+
+.tor.sheet header input {
+  border: none;
+  background-color: transparent;
+  font-size: 30px;
+  padding: 1.4rem 0;
+  width: 320px;
+  border: 1px solid transparent;
+}
+
+.tor.sheet .stats_container {
+  font-family: var(--modesto);
+  color: var(--text-color-light);
+  width: 100%;
+}
+
+.tor.sheet header .row {
+  border-bottom: 2px groove #eeede0;
+}
+
+.tor.sheet .stats_container .stats {
+  font-size: 22px;
+  display: flex;
+  align-items: baseline;
+  padding: .4rem;
+  position: relative;
+  justify-content: space-between;
+}
+
+.tor.sheet .description {
+  text-align: justify;
+  min-height: 70px;
+}
+
+.tor.sheet .description .editor {
+  height: 100px;
+}
+
+.tor.sheet .description .editor-content {
+  height: 100px;
+}
+
+.tor.sheet .section-header {
+  border-top: 1px solid var(--divider-color);
+  border-bottom: 1px solid var(--divider-color);
+  font-family: var(--modesto);
+  font-size: 24px;
+  margin-bottom: .5rem;
+}
+
+.tor.sheet label.stat {
+  font-weight: bold;
+}
+
+.tor.sheet .form-group {
+  margin: 6px 0;
+}

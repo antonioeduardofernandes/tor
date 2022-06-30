@@ -1,0 +1,29 @@
+{
+    "tor": {
+        "weaponProficiencies":{
+            "axes":"Axes",
+            "bows":"Bows",
+            "lances":"Lances",
+            "swords":"Swords"
+        },
+        "items": {
+            "type": {
+                "weapon": "Weapon",
+                "armour": "Armour",
+                "shield": "Shield",
+                "mount": "Mount",
+                "reward": "Reward",
+                "virtue": "Virtue",
+                "usefulItem": "Useful item",
+                "trait": "Trait",
+                "fellAbility": "Fell Ability"
+            }
+        },
+        "weapon": {
+            "damage": "Damage",
+            "injury": "Injury",
+            "piercingBlow": "Piercing Blow",
+            "proficiency": "Proficiency"
+        }
+    }
+}
