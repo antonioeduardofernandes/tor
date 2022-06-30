@@ -119,6 +119,11 @@
                 "third": ""
             }
         },
+        "culture":{
+            "templates":["base"],
+            "living":""
+        },
+
         "armour": {
             "templates": [
                 "base",

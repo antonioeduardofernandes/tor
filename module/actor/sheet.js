@@ -13,7 +13,8 @@ export class TORActorSheet extends ActorSheet {
 
 
   get template() {
-    return `systems/tor/templates/sheets/actors/${this.actor.data.type}-sheet.html`;
+    let path = "systems/TOR.templates/sheets/items/"
+    return `${path}/${this.actor.data.type}.html`;
   }
 
 

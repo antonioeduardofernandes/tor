@@ -1,3 +1,4 @@
+import { TOR } from "../config";
 
 export class TORItemSheet extends ItemSheet {
 
@@ -13,7 +14,8 @@ export class TORItemSheet extends ItemSheet {
 
 
   get template() {
-    return `systems/tor/templates/sheets/items/${this.item.data.type}-sheet.html`;
+    let path = "systems/TOR.templates/sheets/items/"
+    return `${path}/${this.item.data.type}.html`;
   }
 
 
@@ -26,14 +28,17 @@ export class TORItemSheet extends ItemSheet {
     data.itemType = game.i18n.localize(`ITEM.Type${data.item.type.titleCase()}`)
 
     //GET WEAPON TYPE AND GROUP
-    data.type = this._getWeaponType(itemData)
-    data.group = this._getWeaponGroup(itemData)
-
+    if (data.item.type === "weapon") {
+      data.type = this._getWeaponType(itemData)
+      data.weaponGroup = this._getWeaponGroup(itemData)
+    }
 
     data.item = itemData;
     data.data = itemData.data;
     return data;
   }
+
+
 
   _getWeaponType(itemData) {
     if (itemData.type !== "weapon") return
