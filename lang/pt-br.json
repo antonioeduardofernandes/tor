@@ -1,4 +1,5 @@
 {
+    "ITEM.TypeCulture": "Cultura",
     "ITEM.TypeArmor": "Armadura",
     "ITEM.TypeWeapon": "Arma",
     "ITEM.TypeShield": "Escudo",
@@ -13,6 +14,9 @@
     "ACTOR.TypeFellowship":"Comitiva",
     "ACTOR.TypePatron":"Patrono",
     "ACTOR.TypeAdversary":"Adversário",
+
+    "TOR.culture":"cultura",
+    "TOR.standardOfLiving":"padrão de vida",
 
     "TOR.poor":"pobre",
     "TOR.frugal":"frugal",

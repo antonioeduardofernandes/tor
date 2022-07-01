@@ -3,10 +3,10 @@ export class TORActorSheet extends ActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ["tor", "sheet", "actor", "hero"],
-      width: 950,
+      width: 800,
       height: 620,
       resizable: true,
-      tabs: [{ navSelector: ".sheet-navigation", contentSelector: ".sheet-body", initial: "general" }]
+      tabs: [{ navSelector: ".sheet-navigation", contentSelector: ".sheet-body", initial: "skills" }]
     });
   }
 

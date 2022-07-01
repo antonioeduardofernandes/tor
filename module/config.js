@@ -1,6 +1,7 @@
 export const TOR = {}
 
 TOR.base = {
+    culture: "TOR.culture",
     rewards: "TOR.rewards",
     virtues: "TOR.virtues",
     details: "TOR.details",
@@ -10,6 +11,7 @@ TOR.base = {
     type: "TOR.type",
     protection: "TOR.protection",
     parry: "TOR.parry",
+    standardOfLiving: "TOR.standardOfLiving",
 }
 
 TOR.itemStats = {

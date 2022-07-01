@@ -127,9 +127,6 @@
 /* ----------------------------------------- */
 .tor.sheet {
   overflow: hidden;
-  padding: .5rem;
-  background: url("ui/parchment.jpg") repeat;
-  color: var(--text-color);
 }
 
 .tor.sheet .sheet-body {
@@ -139,14 +136,16 @@
   font-size: var(--font-size);
 }
 
-.tor.sheet h4.window-title {
-  font-size: 28px;
-  font-family: var(--modesto);
+.tor.sheet .window-header {
+  flex: 0 0 30px;
+  padding: 0 .5rem;
 }
 
 .tor.sheet .window-content {
+  color: var(--text-color);
+  background: url("ui/parchment.jpg") repeat;
   font-size: var(--font-size);
-  padding: .5rem 0;
+  padding: .5rem;
 }
 
 .tor.sheet header {

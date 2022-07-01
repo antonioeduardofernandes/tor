@@ -74,6 +74,7 @@
     },
     "Item": {
         "types": [
+            "culture",
             "weapon",
             "armor",
             "shield",
@@ -123,7 +124,10 @@
             "templates": [
                 "base"
             ],
-            "standardOfLiving": ""
+            "standardOfLiving": "",
+            "endurance": 10,
+            "hope": 10,
+            "parry": 10
         },
         "armor": {
             "templates": [
