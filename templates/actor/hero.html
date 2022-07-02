@@ -1,11 +1,25 @@
 <form class="{{cssClass}}" flexcol autocomplete="off">
 
   <!-- HEADER -->
-  <header class="sheet-header flexrow">
-    <img width="100px" height="100px" class="header_img" src="{{actor.img}}" title="{{actor.name}}" data-edit="img" />
-    
+  <header>
+    <img src="{{actor.img}}" title="{{actor.name}}" data-edit="img" />
+    <div class="stats_container">
+      <div class="row">
+        <div class="stats">
+          <input name="name" type="text" value="{{actor.name}}" placeholder="Nome" />
+          <span class="header-stat">Ranger of the North</span>
+          <span class="header-stat">Champion</span>
+        </div>
+      </div>
+
+      
+        {{> "systems/tor/templates/actor/partials/resources.html"}}
+   
+
 
     </div>
+
+    <!-- </div> -->
 
 
   </header>

@@ -3,6 +3,8 @@ import { TOR } from "./module/config.js"
 import { TORActorSheet } from "./module/actor/sheet.js"
 import { TORItemSheet } from "./module/item/sheet.js"
 
+import { preloadHandlebarsTemplates } from "./module/helpers/templates.js"
+
 
 
 Hooks.once("init", function () {
