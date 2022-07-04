@@ -1,0 +1,34 @@
+<div class="inventory">
+
+
+    <div class="items-container">
+        <div class="item-row header">
+            <div class="left-content">
+                <div class="title">Title</div>
+            </div>
+            <div class="right-content">
+                <div>Dano</div>
+                <div>Trauma</div>
+                <div>Gume</div>
+                <div>Carga</div>
+                <div>Controle</div>
+            </div>
+        </div>
+        {{#each weapons as |item id|}}
+        <div class="item-row">
+            <div class="left-content">
+                <div class="item-image" style="background-image: url({{item.img}});"></div>
+                <div>{{item.name}}</div>
+            </div>
+            <div class="right-content">
+                <div>{{item.data.damage}}</div>
+                <div>{{item.data.injury}}</div>
+                <div>{{item.data.piercingBlow}}</div>
+                <div>{{item.data.load}}</div>
+                <div>icon, icon, icon</div>
+            </div>
+        </div>
+        {{/each}}
+
+    </div>
+</div>

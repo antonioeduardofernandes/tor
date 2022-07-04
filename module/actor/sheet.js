@@ -6,7 +6,7 @@ export class TORActorSheet extends ActorSheet {
       width: 800,
       height: 620,
       resizable: true,
-      tabs: [{ navSelector: ".sheet-navigation", contentSelector: ".sheet-body", initial: "skills" }]
+      tabs: [{ navSelector: ".sheet-navigation", contentSelector: ".sheet-body", initial: "inventory" }]
     });
   }
 
@@ -27,8 +27,39 @@ export class TORActorSheet extends ActorSheet {
     data.data = actorData.data
     data.flags = actorData.flags
 
+    if (actorData.type === "hero") {
+      this._prepareItems(data)
+    }
+
     data.rollData = data.actor.getRollData();
 
+
     return data
+  }
+
+
+  _prepareItems(data) {
+    const weapons = []
+    const features = []
+
+    for (let item of data.items) {
+      if (item.type === "weapon") {
+        weapons.push(item)
+      }
+    }
+    data.weapons = weapons
+    data.features = features
+  }
+
+  activateListeners(html) {
+    super.activateListeners(html)
+
+    //delete item
+    html.find(".item-delete").click(ev => {
+      ev.preventDefault()
+      const li = ev.currentTarget.closest(".item")
+      const item = this.actor.items.get(li.dataset.itemId)
+      return item.delete(0)
+    })
   }
 }
