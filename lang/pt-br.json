@@ -6,7 +6,7 @@
     "ITEM.TypeMount": "Montaria",
     "ITEM.TypeReward": "Recompensa",
     "ITEM.TypeVirtue": "Virtude",
-    "ITEM.TypeUsefulitem": "Item Útil",
+    "ITEM.TypeItem": "Item",
     "ITEM.TypeTrait": "Característica Distintiva",
     "ITEM.TypeFellability": "Habilidade Terrível",
 
@@ -14,6 +14,8 @@
     "ACTOR.TypeFellowship":"Comitiva",
     "ACTOR.TypePatron":"Patrono",
     "ACTOR.TypeAdversary":"Adversário",
+
+    "TOR.controls":"controles",
 
     "TOR.culture":"cultura",
     "TOR.standardOfLiving":"padrão de vida",
@@ -56,7 +58,7 @@
     "TOR.damage":"dano",
     "TOR.injury":"trauma",
     "TOR.twoHanded":"duas mãos",
-    "TOR.piercingBlow":"golpe perfurante",
+    "TOR.weaponPiercingBlow":"gume",
     "TOR.vigour":"vigor",
     "TOR.bane":"condenação",
     "TOR.canBeTwoHanded":"pode ser utilizada com 2 mãos",

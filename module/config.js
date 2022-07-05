@@ -1,6 +1,7 @@
 export const TOR = {}
 
 TOR.base = {
+    controls: "TOR.controls",
     culture: "TOR.culture",
     rewards: "TOR.rewards",
     virtues: "TOR.virtues",
@@ -9,16 +10,18 @@ TOR.base = {
     basicInfo: "TOR.basicInfo",
     proficiency: "TOR.proficiency",
     type: "TOR.type",
-    protection: "TOR.protection",
     parry: "TOR.parry",
+    piercingBlow: "TOR.piercingBlow",
     standardOfLiving: "TOR.standardOfLiving",
 }
 
 TOR.itemStats = {
+    twoHanded: "TOR.twoHanded",
+    protection: "TOR.protection",
+    piercingBlow: "TOR.weaponPiercingBlow",
     load: "TOR.load",
     damage: "TOR.damage",
     injury: "TOR.injury",
-    piercingBlow: "TOR.piercingBlow",
     vigour: "TOR.vigour",
     firstReward: "TOR.firstReward",
     secondReward: "TOR.secondReward",

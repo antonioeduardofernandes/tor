@@ -13,6 +13,7 @@
             "culture": "",
             "culturalBlessing": "",
             "standardOfLiving": "",
+            "treasure": 0,
             "calling": "",
             "shadowPath": "",
             "resources": {
@@ -74,14 +75,14 @@
     },
     "Item": {
         "types": [
-            "culture",
             "weapon",
             "armor",
             "shield",
+            "item",
             "mount",
-            "reward",
+            "culture",
             "virtue",
-            "usefulItem",
+            "reward",
             "trait",
             "fellAbility"
         ],
@@ -120,15 +121,6 @@
                 "third": ""
             }
         },
-        "culture": {
-            "templates": [
-                "base"
-            ],
-            "standardOfLiving": "",
-            "endurance": 10,
-            "hope": 10,
-            "parry": 10
-        },
         "armor": {
             "templates": [
                 "base",
@@ -146,12 +138,31 @@
             ],
             "parry": 0
         },
+        "culture": {
+            "templates": [
+                "base"
+            ],
+            "standardOfLiving": "",
+            "endurance": 10,
+            "hope": 10,
+            "parry": 10
+        },
         "mount": {
             "templates": [
                 "base"
             ],
             "vigour": 0,
             "minimumLiving": ""
+        },
+        "item": {
+            "templates": [
+                "base"
+            ],
+            "magical": false,
+            "skills": {
+                "first": {},
+                "second": {}
+            }
         }
     }
 }
