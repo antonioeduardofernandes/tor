@@ -28,12 +28,12 @@
     </div>
 
     <div class="flexcolumn">
-      <div class="section-header">Características</div>
+      <div class="section-header">{{localize config.base.characteristics}}</div>
       <div class="form-group">
         <label class="stat">{{localize config.base.proficiency}}</label>
         <select name="data.proficiency">
           {{#select data.proficiency}}
-          <option value="">Selecione</option>
+          <option value="">{{localize config.base.emptySelect}}</option>
           {{#each config.proficiencies as |name key|}}
           <option value="{{key}}">{{localize name}}</option>
           {{/each}}
@@ -44,7 +44,7 @@
         <label class="stat">{{localize config.base.type}}</label>
         <select name="data.weaponType">
           {{#select data.weaponType}}
-          <option value="">Selecione</option>
+          <option value="">{{localize config.base.emptySelect}}</option>
           {{#each config.weaponTypes as |name key|}}
           <option value="{{key}}">{{localize name}}</option>
           {{/each}}
@@ -73,15 +73,34 @@
         <label class="stat">{{localize config.itemStats.craftsmanship}}</label>
         <select name="data.craftsmanship">
           {{#select data.craftsmanship}}
-          <option value="">Desconhecida</option>
+          <option value="">{{localize config.itemStats.unknownCraftsmanship}}</option>
           {{#each config.craftsmanship as |name key|}}
           <option value="{{key}}">{{localize name}}</option>
           {{/each}}
           {{/select}}
         </select>
       </div>
-      
-      <div class="section-header">Recompensas</div>
+
+      <div class="form-group">
+        <label class="stat">Pode ser empunhada com 1 ou 2 mãos</label>
+        <input type="checkbox" name="data.wieldType.versatile" {{checked data.wieldType.versatile}}>
+      </div>
+
+    
+      <div class="form-group">
+        <label class="stat">Empunhada com:</label>
+        <select name="data.wieldType.value">
+          {{#select data.wieldType.value}}
+          {{#each config.wieldType as |name key|}}
+          <option value="{{key}}">{{localize name}}</option>
+          {{/each}}
+          {{/select}}
+        </select>
+      </div>
+    
+
+
+      <div class="section-header">{{localize config.base.rewards}}</div>
       <div class="form-group">
         <label class="stat">{{localize config.itemStats.firstReward}}</label>
         <select name="data.rewards.first">
@@ -97,7 +116,7 @@
         <label class="stat">{{localize config.itemStats.secondReward}}</label>
         <select name="data.rewards.second">
           {{#select data.rewards.second}}
-          <option value="">Selecione</option>
+          <option value="">{{localize config.base.emptySelect}}</option>
           {{#each config.weaponRewards as |name key|}}
           <option value="{{key}}">{{localize name}}</option>
           {{/each}}
@@ -108,7 +127,7 @@
         <label class="stat">{{localize config.itemStats.thirdReward}}</label>
         <select name="data.rewards.third">
           {{#select data.rewards.third}}
-          <option value="">Selecione</option>
+          <option value="">{{localize config.base.emptySelect}}</option>
           {{#each config.weaponRewards as |name key|}}
           <option value="{{key}}">{{localize name}}</option>
           {{/each}}
@@ -116,8 +135,5 @@
         </select>
       </div>
   </section>
-
-
-
 
 </form>

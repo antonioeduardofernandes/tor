@@ -390,12 +390,29 @@
 
 .tor.sheet.actor .inventory .control-icons a {
   opacity: .3;
+  position: relative;
 }
 
 .tor.sheet.actor .inventory .control-icons a:hover {
   opacity: 1;
 }
 
-.tor.sheet.actor .inventory .control-icons .item-equip.active {
+.tor.sheet.actor .inventory .control-icons .item-equip.active,
+.tor.sheet.actor .inventory .control-icons .item-wield {
   opacity: 1;
+}
+
+.wield-counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: -8px;
+  left: -10px;
+  background-color: teal;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  color: white;
+  font-size: 10px;
 }

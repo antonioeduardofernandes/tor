@@ -115,6 +115,10 @@
             "damage": 1,
             "injury": 10,
             "piercingBlow": 10,
+            "wieldType": {
+                "versatile": false,
+                "value": "1"
+            },
             "rewards": {
                 "first": "",
                 "second": "",

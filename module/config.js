@@ -1,6 +1,8 @@
 export const TOR = {}
 
 TOR.base = {
+    emptySelect: "TOR.emptySelect",
+    characteristics: "TOR.characteristics",
     controls: "TOR.controls",
     culture: "TOR.culture",
     rewards: "TOR.rewards",
@@ -27,6 +29,7 @@ TOR.itemStats = {
     secondReward: "TOR.secondReward",
     thirdReward: "TOR.thirdReward",
     craftsmanship: "TOR.craftsmanship",
+    unknownCraftsmanship: "TOR.unknownCraftsmanship",
     bane: "TOR.bane",
     minimumLiving: "TOR.minimumLiving",
 }
@@ -44,6 +47,11 @@ TOR.weaponTypes = {
     melee: "TOR.melee",
     ranged: "TOR.ranged",
     thrown: "TOR.thrown",
+}
+
+TOR.wieldType = {
+    "1":"TOR.singleHanded",
+    "2":"TOR.twoHanded",
 }
 
 TOR.armorTypes = {

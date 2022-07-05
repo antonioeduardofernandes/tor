@@ -17,6 +17,9 @@ export class TORItemSheet extends ItemSheet {
     if (this.object.data.type === "mount") {
       this.options.height = this.position.height = 380;
     }
+    if (this.object.data.type === "trait") {
+      this.options.height = this.position.height = 380;
+    }
   }
 
 
@@ -24,7 +27,7 @@ export class TORItemSheet extends ItemSheet {
     return mergeObject(super.defaultOptions, {
       classes: ["tor", "sheet", "item"],
       width: 560,
-      height: 600,
+      height: 400,
       resizable: false,
       tabs: [{ navSelector: ".sheet-navigation", contentSelector: ".sheet-body", initial: "details" }]
     });
@@ -49,6 +52,7 @@ export class TORItemSheet extends ItemSheet {
     if (data.item.type === "weapon") {
       data.weaponGroup = this._getWeaponGroup(itemData)
     }
+
     if (data.item.type === "weapon" || data.item.type === "armor") {
       data.type = this._getItemType(itemData)
     }
@@ -71,8 +75,4 @@ export class TORItemSheet extends ItemSheet {
     if (itemData.type !== "weapon") return
     return itemData.data.proficiency ? game.i18n.localize(`TOR.${(itemData.data.proficiency)}`) : ""
   }
-
-
-
-
 }

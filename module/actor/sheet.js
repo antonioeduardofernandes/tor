@@ -43,7 +43,6 @@ export class TORActorSheet extends ActorSheet {
     const rewards = []
 
     for (let item of data.items) {
-
       if (item.type === "weapon") {
         weapons.push(item)
       }
@@ -62,7 +61,7 @@ export class TORActorSheet extends ActorSheet {
       if (item.type === "fellAbility") {
         ui.warnings.error("Não é possível atribuir uma Habilidade Terrível a um herói")
       }
-      else {
+      if (item.type === "culture" || item.type === "trait") {
         features.push(item)
       }
     }
@@ -98,22 +97,18 @@ export class TORActorSheet extends ActorSheet {
       event.preventDefault()
       const div = event.currentTarget.closest(".item-row")
       const item = this.actor.items.get(div.dataset.itemId)
-      item.update({ "data.equiped": !item.data.data.equiped })
+      return item.update({ "data.equiped": !item.data.data.equiped })
     })
 
-    //toggle twoHanded
-    html.find(".item-control.item-twoHanded").click(event => {
+    //toggle twoHanded if versatile else returns
+    html.find(".item-control.item-wield").click(event => {
       event.preventDefault()
       const div = event.currentTarget.closest(".item-row")
       const item = this.actor.items.get(div.dataset.itemId)
-
-      console.log(item.type)
-      console.log(item.data.twoHanded)
-
-      // item.update({ "data.equiped": !item.data.data.equiped })
+      if (!item.data.data.wieldType.versatile) return
+      let newValue = item.data.data.wieldType.value === "1" ? "2" : "1"
+      return item.update({ "data.wieldType.value": newValue })
     })
-
   }
-
 
 }

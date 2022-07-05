@@ -15,6 +15,9 @@
     "ACTOR.TypePatron":"Patrono",
     "ACTOR.TypeAdversary":"Adversário",
 
+    "TOR.unknownCraftsmanship":"desconhecida",
+    "TOR.emptySelect":"selecione",
+    "TOR.characteristics":"características",
     "TOR.controls":"controles",
 
     "TOR.culture":"cultura",
@@ -57,7 +60,6 @@
     "TOR.load":"carga",
     "TOR.damage":"dano",
     "TOR.injury":"trauma",
-    "TOR.twoHanded":"duas mãos",
     "TOR.weaponPiercingBlow":"gume",
     "TOR.vigour":"vigor",
     "TOR.bane":"condenação",
@@ -65,6 +67,9 @@
     "TOR.protection":"proteção",
     "TOR.parry":"aparar",
     "TOR.minimumLiving":"padrão de vida mínimo",
+
+    "TOR.singleHanded":"uma mão",
+    "TOR.twoHanded":"duas mãos",
 
     "TOR.firstReward":"primeira recompensa",
     "TOR.secondReward":"segunda recompensa",
