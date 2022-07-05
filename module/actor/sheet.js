@@ -94,11 +94,26 @@ export class TORActorSheet extends ActorSheet {
     })
 
     //toggle equip item
-    html.find(".item-control.item-toggle").click(event => {
+    html.find(".item-control.item-equip").click(event => {
       event.preventDefault()
       const div = event.currentTarget.closest(".item-row")
       const item = this.actor.items.get(div.dataset.itemId)
       item.update({ "data.equiped": !item.data.data.equiped })
     })
+
+    //toggle twoHanded
+    html.find(".item-control.item-twoHanded").click(event => {
+      event.preventDefault()
+      const div = event.currentTarget.closest(".item-row")
+      const item = this.actor.items.get(div.dataset.itemId)
+
+      console.log(item.type)
+      console.log(item.data.twoHanded)
+
+      // item.update({ "data.equiped": !item.data.data.equiped })
+    })
+
   }
+
+
 }

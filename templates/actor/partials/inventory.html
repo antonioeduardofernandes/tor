@@ -5,7 +5,6 @@
                 <div class="title">Armas</div>
             </div>
             <div class="right-content">
-                <div>{{localize config.itemStats.twoHanded}}</div>
                 <div>{{localize config.itemStats.damage}}</div>
                 <div>{{localize config.itemStats.injury}}</div>
                 <div>{{localize config.itemStats.piercingBlow}}</div>
@@ -20,13 +19,13 @@
                 <div>{{item.name}}</div>
             </div>
             <div class="right-content">
-                <div>ÍCONE AQUI</div>
                 <div>{{item.data.damage}}</div>
                 <div>{{item.data.injury}}</div>
                 <div>{{item.data.piercingBlow}}</div>
                 <div>{{item.data.load}}</div>
                 <div class="control-icons">
-                    <a class="item-control item-toggle {{#if item.data.equiped}}active{{/if}}"><i
+                    <a class="item-control item-twoHanded"><i class="fas fa-hand-rock"></i></a>
+                    <a class="item-control item-equip {{#if item.data.equiped}}active{{/if}}"><i
                             class="fas fa-shield-alt"></i></a>
                     <a class="item-control item-edit"><i class="fas fa-edit"></i></a>
                     <a class="item-control item-delete"><i class="fas fa-trash"></i></a>
@@ -54,11 +53,13 @@
                 <div>{{item.name}}</div>
             </div>
             <div class="right-content">
-                <div>{{item.data.protection}}</div>
-                <div>{{item.data.parry}}</div>
+                <div>{{#if item.data.protection}}{{item.data.protection}}d{{else}}-{{/if}}</div>
+                <div>{{#if item.data.parry}}+{{item.data.parry}}{{else}}-{{/if}}</div>
                 <div>{{item.data.load}}</div>
                 <div class="control-icons">
-                    <a class="item-control item-equip"><i class="fas fa-shield-alt"></i></a>
+                    <a class="item-control item-twoHanded"><i class="fas fa-hand-rock"></i></a>
+                    <a class="item-control item-equip {{#if item.data.equiped}}active{{/if}}"><i
+                            class="fas fa-shield-alt"></i></a>
                     <a class="item-control item-edit"><i class="fas fa-edit"></i></a>
                     <a class="item-control item-delete"><i class="fas fa-trash"></i></a>
                 </div>

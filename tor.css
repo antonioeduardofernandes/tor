@@ -366,31 +366,36 @@
 .tor.sheet.actor .inventory .right-content {
   text-transform: capitalize;
   align-items: center;
-  /* opacity: .5; */
   display: flex;
   justify-content: flex-end;
   color: var(--text-color-light);
+  column-gap: 1rem;
 }
 
 .tor.sheet.actor .inventory .right-content div {
-  width: 80px;
+  width: 60px;
   text-align: center;
 }
 
 .tor.sheet.actor .inventory .right-content div:last-of-type {
-  width: 60px;
+  width: 80px;
   margin-right: .5rem;
 }
 
 .tor.sheet.actor .inventory .control-icons {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  column-gap: .5rem;
 }
 
-.tor.sheet.actor .inventory .control-icons .item-toggle {
-  color: var(--text-color-light);
+.tor.sheet.actor .inventory .control-icons a {
+  opacity: .3;
 }
 
-.tor.sheet.actor .inventory .control-icons .item-toggle.active {
-  color: red;
+.tor.sheet.actor .inventory .control-icons a:hover {
+  opacity: 1;
+}
+
+.tor.sheet.actor .inventory .control-icons .item-equip.active {
+  opacity: 1;
 }
