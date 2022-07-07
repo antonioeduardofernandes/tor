@@ -23,4 +23,52 @@
         </div>
         {{/each}}
     </div>
+    <div class="items-container">
+        <div class="item-row header">
+            <div class="left-content">
+                <div class="title">Virtudes</div>
+            </div>
+            <div class="right-content">
+                <div>{{localize config.base.controls}}</div>
+            </div>
+        </div>
+        {{#each virtues as |item id|}}
+        <div class="item-row" data-item-id="{{item._id}}">
+            <div class="left-content">
+                <div class="item-image" style="background-image: url({{item.img}});"></div>
+                <div>{{item.name}}</div>
+            </div>
+            <div class="right-content">
+                <div class="control-icons">
+                    <a class="item-control item-edit"><i class="fas fa-edit"></i></a>
+                    <a class="item-control item-delete"><i class="fas fa-trash"></i></a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <div class="items-container">
+        <div class="item-row header">
+            <div class="left-content">
+                <div class="title">Recompensas</div>
+            </div>
+            <div class="right-content">
+                <div>{{localize config.base.controls}}</div>
+            </div>
+        </div>
+        {{#each rewards as |item id|}}
+        <div class="item-row" data-item-id="{{item._id}}">
+            <div class="left-content">
+                <div class="item-image" style="background-image: url({{item.img}});"></div>
+                <div>{{item.name}}</div>
+            </div>
+            <div class="right-content">
+                <div class="control-icons">
+                    <a class="item-control item-edit"><i class="fas fa-edit"></i></a>
+                    <a class="item-control item-delete"><i class="fas fa-trash"></i></a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
 </div>

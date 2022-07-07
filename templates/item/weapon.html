@@ -54,19 +54,19 @@
 
       <div class="form-group">
         <label class="stat">{{localize config.itemStats.damage}}</label>
-        <input type="text" name="data.damage" value="{{data.damage}}">
+        <input type="number" name="data.damage" value="{{data.damage}}">
       </div>
       <div class="form-group">
         <label class="stat">{{localize config.itemStats.injury}}</label>
-        <input type="text" name="data.injury" value="{{data.injury}}">
+        <input type="number" name="data.injury" value="{{data.injury}}">
       </div>
       <div class="form-group">
         <label class="stat">{{localize config.itemStats.piercingBlow}}</label>
-        <input type="text" name="data.piercingBlow" value="{{data.piercingBlow}}">
+        <input type="number" name="data.piercingBlow" value="{{data.piercingBlow}}">
       </div>
       <div class="form-group">
         <label class="stat">{{localize config.itemStats.load}}</label>
-        <input type="text" name="data.load" value="{{data.load}}">
+        <input type="number" name="data.load" value="{{data.load}}">
       </div>
 
       <div class="form-group">
@@ -86,7 +86,7 @@
         <input type="checkbox" name="data.wieldType.versatile" {{checked data.wieldType.versatile}}>
       </div>
 
-    
+
       <div class="form-group">
         <label class="stat">Empunhada com:</label>
         <select name="data.wieldType.value">
@@ -97,10 +97,10 @@
           {{/select}}
         </select>
       </div>
-    
 
 
       <div class="section-header">{{localize config.base.rewards}}</div>
+      
       <div class="form-group">
         <label class="stat">{{localize config.itemStats.firstReward}}</label>
         <select name="data.rewards.first">

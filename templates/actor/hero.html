@@ -30,6 +30,18 @@
   <!-- BODY -->
   <section class="sheet-body">
     <div class="tab" data-group="primary" data-tab="skills">
+      <div class="skills">
+        <div class="attributes">
+          {{#each data.attributes as |key attribute|}}
+          <div class="attribute">
+            <div class="left">{{attribute}} <input name="data.attributes.{{attribute}}.value" type="number"
+                value="{{key.value}}" /></div>
+            <div class="right">TN {{key.tn}}</div>
+          </div>
+          {{/each}}
+        </div>
+        {{> "systems/tor/templates/actor/partials/skills.html"}}
+      </div>
     </div>
     <div class="tab" data-group="primary" data-tab="features">
       {{> "systems/tor/templates/actor/partials/features.html"}}

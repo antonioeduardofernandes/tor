@@ -1,4 +1,3 @@
-
 export class TORItemSheet extends ItemSheet {
 
   constructor(...args) {
@@ -29,7 +28,7 @@ export class TORItemSheet extends ItemSheet {
       width: 560,
       height: 400,
       resizable: false,
-      tabs: [{ navSelector: ".sheet-navigation", contentSelector: ".sheet-body", initial: "details" }]
+      // tabs: [{ navSelector: ".sheet-navigation", contentSelector: ".sheet-body", initial: "details" }],
     });
   }
 
@@ -61,6 +60,7 @@ export class TORItemSheet extends ItemSheet {
     //boilerplate content
     data.item = itemData;
     data.data = itemData.data;
+
     return data;
   }
 

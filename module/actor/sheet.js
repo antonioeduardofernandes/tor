@@ -6,7 +6,7 @@ export class TORActorSheet extends ActorSheet {
       width: 800,
       height: 697,
       resizable: true,
-      tabs: [{ navSelector: ".sheet-navigation", contentSelector: ".sheet-body", initial: "inventory" }]
+      tabs: [{ navSelector: ".sheet-navigation", contentSelector: ".sheet-body", initial: "skills" }]
     });
   }
 
@@ -27,9 +27,9 @@ export class TORActorSheet extends ActorSheet {
       this._prepareItems(data)
     }
 
-    data.rollData = data.actor.getRollData();
-
     return data
+
+
   }
 
   // prepare each item type
@@ -92,7 +92,7 @@ export class TORActorSheet extends ActorSheet {
       return item.sheet.render(true)
     })
 
-    //toggle equip item
+    //toggle equip status for item
     html.find(".item-control.item-equip").click(event => {
       event.preventDefault()
       const div = event.currentTarget.closest(".item-row")
@@ -109,6 +109,7 @@ export class TORActorSheet extends ActorSheet {
       let newValue = item.data.data.wieldType.value === "1" ? "2" : "1"
       return item.update({ "data.wieldType.value": newValue })
     })
+
   }
 
 }
