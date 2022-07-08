@@ -17,6 +17,30 @@ TOR.base = {
     standardOfLiving: "TOR.standardOfLiving",
 }
 
+TOR.skills = {
+    awe:"TOR.awe",
+    athletics:"TOR.athletics",
+    awareness:"TOR.awareness",
+    hunting:"TOR.hunting",
+    song:"TOR.song",
+    craft:"TOR.craft",
+
+    enhearten:"TOR.enhearten",
+    travel:"TOR.travel",
+    insight:"TOR.insight",
+    healing:"TOR.healing",
+    courtesy:"TOR.courtesy",
+    battle:"TOR.battle",
+
+    persuade:"TOR.persuade",
+    stealth:"TOR.stealth",
+    scan:"TOR.scan",
+    explore:"TOR.explore",
+    riddle:"TOR.riddle",
+    lore:"TOR.lore",
+
+}
+
 TOR.itemStats = {
     twoHanded: "TOR.twoHanded",
     protection: "TOR.protection",

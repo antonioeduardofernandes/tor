@@ -25,6 +25,7 @@ export class TORActorSheet extends ActorSheet {
 
     if (actorData.type === "hero") {
       this._prepareItems(data)
+      this._prepareSkills(data)
     }
 
     return data
@@ -71,6 +72,30 @@ export class TORActorSheet extends ActorSheet {
     data.virtues = virtues
     data.rewards = rewards
     data.features = features
+  }
+
+  _prepareSkills(data) {
+    const strengthSkills = []
+    const heartSkills = []
+    const witsSkills = []
+
+
+    for (let [key, skill] of Object.entries(data.data.skills)) {
+      skill.name = game.i18n.localize(`TOR.${key}`).titleCase()
+      if (skill.attribute === "strength") {
+        strengthSkills.push(skill)
+      }
+      if (skill.attribute === "heart") {
+        heartSkills.push(skill)
+      }
+      if (skill.attribute === "wits") {
+        witsSkills.push(skill)
+      }
+    }
+
+    data.strengthSkills = strengthSkills
+    data.heartSkills = heartSkills
+    data.witsSkills = witsSkills
   }
 
   activateListeners(html) {

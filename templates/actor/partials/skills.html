@@ -1,5 +1,86 @@
-<div class="skills">
-    <div class="skill">
-
+<div class="skills-container">
+    <div class="skill-column">
+        {{#each strengthSkills as |key skill|}}
+        <div class="skill">
+            <div class="left">
+                <a class="skill-favoured-toggle">
+                    <i class="far fa-circle"></i>
+                </a>
+                <a><span>{{key.name}}</span></a>
+            </div>
+            <div class="icons">
+                <a class="skill-favoured-toggle">
+                    <i class="fas fa-screwdriver"></i>
+                </a>
+                <a class="skill-favoured-toggle">
+                    <i class="fas fa-bahai"></i>
+                </a>
+            </div>
+            <div class="score">
+                <div class="diamond-score"></div>
+                <div class="diamond-score"></div>
+                <div class="diamond-score"></div>
+                <div class="diamond-score"></div>
+                <div class="diamond-score"></div>
+                <div class="diamond-score"></div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <div class="skill-column">
+        {{#each heartSkills as |key skill|}}
+        <div class="skill">
+            <div class="left">
+                <a class="skill-favoured-toggle">
+                    <i class="far fa-circle"></i>
+                </a>
+                <a><span>{{key.name}}</span></a>
+            </div>
+            <div class="icons">
+                <a class="skill-favoured-toggle">
+                    <i class="fas fa-screwdriver"></i>
+                </a>
+                <a class="skill-favoured-toggle">
+                    <i class="fas fa-bahai"></i>
+                </a>
+            </div>
+            <div class="score">
+                <div class="diamond-score"></div>
+                <div class="diamond-score"></div>
+                <div class="diamond-score"></div>
+                <div class="diamond-score"></div>
+                <div class="diamond-score"></div>
+                <div class="diamond-score"></div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <div class="skill-column">
+        {{#each witsSkills as |key skill|}}
+        <div class="skill">
+            <div class="left">
+                <a class="skill-favoured-toggle">
+                    <i class="far fa-circle"></i>
+                </a>
+                <a><span>{{key.name}}</span></a>
+            </div>
+            <div class="icons">
+                <a class="skill-favoured-toggle">
+                    <i class="fas fa-screwdriver"></i>
+                </a>
+                <a class="skill-favoured-toggle">
+                    <i class="fas fa-bahai"></i>
+                </a>
+            </div>
+            <div class="score">
+                <div class="diamond-score"></div>
+                <div class="diamond-score"></div>
+                <div class="diamond-score"></div>
+                <div class="diamond-score"></div>
+                <div class="diamond-score"></div>
+                <div class="diamond-score"></div>
+            </div>
+        </div>
+        {{/each}}
     </div>
 </div>

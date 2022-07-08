@@ -15,6 +15,28 @@
     "ACTOR.TypePatron":"Patrono",
     "ACTOR.TypeAdversary":"Adversário",
 
+
+    "TOR.awe":"assombro",
+    "TOR.athletics":"atletismo",
+    "TOR.awareness":"percepção",
+    "TOR.hunting":"caça",
+    "TOR.song":"cantigas",
+    "TOR.craft":"ofícios",
+
+    "TOR.enhearten":"encorajar",
+    "TOR.travel":"viagem",
+    "TOR.insight":"intuição",
+    "TOR.healing":"cura",
+    "TOR.courtesy":"cortesia",
+    "TOR.battle":"batalha",
+
+    "TOR.persuade":"persuasão",
+    "TOR.stealth":"furtividade",
+    "TOR.scan":"procurar",
+    "TOR.explore":"exploração",
+    "TOR.riddle":"charadas",
+    "TOR.lore":"conhecimento",
+
     "TOR.unknownCraftsmanship":"desconhecida",
     "TOR.emptySelect":"selecione",
     "TOR.characteristics":"características",

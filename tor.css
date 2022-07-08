@@ -29,12 +29,14 @@
 :root {
   --font-size: 13px;
   --red: #9b282a;
+  --blue-gray: rgba(19, 38, 51, .2);
   --text-color: #000000;
   --text-color-light: #585858;
   --modesto: "Modesto Condensed";
   --signika: "Signika";
   --divider-color: #C1BFB3;
   --grooved-divider: 2px groove #eeede0;
+
 }
 
 /* ----------------------------------------- */
@@ -425,6 +427,7 @@
   display: flex;
   flex-flow: column;
   width: 100%;
+  row-gap: 1rem;
 }
 
 .tor.sheet.actor .skills .attributes {
@@ -473,4 +476,54 @@
   height: 100%;
   color: white;
   font-family: var(--signika);
+}
+
+/* ----------------------------------------- */
+/*  ACTOR SKILLS                         */
+/* ----------------------------------------- */
+
+.tor.sheet.actor .skills-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  column-gap: 1rem;
+}
+
+.tor.sheet.actor .skill-column {
+  width: 100%;
+  border: 1px solid var(--divider-color);
+  border-radius: 2px;
+}
+
+.tor.sheet.actor .skill {
+  display: grid;
+  grid-template-columns: 100px 34px 90px;
+  align-items: center;
+  justify-content: space-between;
+  padding: .4rem;
+}
+
+.tor.sheet.actor .skill:nth-child(even) {
+  background-color: var(--blue-gray);
+}
+
+.tor.sheet.actor .skill .left {
+  column-gap: .2rem;
+}
+
+.tor.sheet.actor .skill a {
+  color: var(--text-color-light);
+}
+
+.tor.sheet.actor .skill .score {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tor.sheet.actor .skill .diamond-score {
+  width: 12px;
+  height: 12px;
+  transform: rotate(45deg);
+  border: 1px solid var(--text-color-light);
+  border-radius: 2px;
 }

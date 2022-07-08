@@ -26,6 +26,12 @@
                     "max": 10
                 }
             },
+            "conditions": {
+                "weary": false,
+                "miserable": false,
+                "poisoned": false,
+                "inspired": false
+            },
             "attributes": {
                 "strength": {
                     "value": 4,
@@ -38,6 +44,112 @@
                 "wits": {
                     "value": 4,
                     "tn": 16
+                }
+            },
+            "proficiencies": {
+                "axes": {
+                    "value": 0
+                },
+                "bows": {
+                    "value": 0
+                },
+                "lances": {
+                    "value": 0
+                },
+                "swords": {
+                    "value": 0
+                }
+            },
+            "skills": {
+                "awe": {
+                    "value": 0,
+                    "favoured": false,
+                    "attribute": "strength"
+                },
+                "athletics": {
+                    "value": 0,
+                    "favoured": false,
+                    "attribute": "strength"
+                },
+                "awareness": {
+                    "value": 0,
+                    "favoured": false,
+                    "attribute": "strength"
+                },
+                "hunting": {
+                    "value": 0,
+                    "favoured": false,
+                    "attribute": "strength"
+                },
+                "song": {
+                    "value": 0,
+                    "favoured": false,
+                    "attribute": "strength"
+                },
+                "craft": {
+                    "value": 0,
+                    "favoured": false,
+                    "attribute": "strength"
+                },
+                "enhearten": {
+                    "value": 0,
+                    "favoured": false,
+                    "attribute": "heart"
+                },
+                "travel": {
+                    "value": 0,
+                    "favoured": false,
+                    "attribute": "heart"
+                },
+                "insight": {
+                    "value": 0,
+                    "favoured": false,
+                    "attribute": "heart"
+                },
+                "healing": {
+                    "value": 0,
+                    "favoured": false,
+                    "attribute": "heart"
+                },
+                "courtesy": {
+                    "value": 0,
+                    "favoured": false,
+                    "attribute": "heart"
+                },
+                "battle": {
+                    "value": 0,
+                    "favoured": false,
+                    "attribute": "heart"
+                },
+                "persuade": {
+                    "value": 0,
+                    "favoured": false,
+                    "attribute": "wits"
+                },
+                "stealth": {
+                    "value": 0,
+                    "favoured": false,
+                    "attribute": "wits"
+                },
+                "scan": {
+                    "value": 0,
+                    "favoured": false,
+                    "attribute": "wits"
+                },
+                "explore": {
+                    "value": 0,
+                    "favoured": false,
+                    "attribute": "wits"
+                },
+                "riddle": {
+                    "value": 0,
+                    "favoured": false,
+                    "attribute": "wits"
+                },
+                "lore": {
+                    "value": 0,
+                    "favoured": false,
+                    "attribute": "wits"
                 }
             },
             "stature": {
