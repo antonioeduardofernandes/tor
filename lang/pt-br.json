@@ -15,6 +15,7 @@
     "ACTOR.TypePatron":"Patrono",
     "ACTOR.TypeAdversary":"Adversário",
 
+    "TOR.skill":"perícia",
 
     "TOR.awe":"assombro",
     "TOR.athletics":"atletismo",
@@ -22,14 +23,12 @@
     "TOR.hunting":"caça",
     "TOR.song":"cantigas",
     "TOR.craft":"ofícios",
-
     "TOR.enhearten":"encorajar",
     "TOR.travel":"viagem",
     "TOR.insight":"intuição",
     "TOR.healing":"cura",
     "TOR.courtesy":"cortesia",
     "TOR.battle":"batalha",
-
     "TOR.persuade":"persuasão",
     "TOR.stealth":"furtividade",
     "TOR.scan":"procurar",

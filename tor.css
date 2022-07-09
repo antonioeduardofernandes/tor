@@ -35,6 +35,7 @@
   --modesto: "Modesto Condensed";
   --signika: "Signika";
   --divider-color: #C1BFB3;
+  --row-color: rgba(19, 38, 51, .12);
   --grooved-divider: 2px groove #eeede0;
 
 }
@@ -328,7 +329,8 @@
 }
 
 .tor.sheet.actor .inventory .items-container .item-row:not(.header):nth-child(odd) {
-  background-color: rgba(88, 88, 88, .2);
+  /* background-color: rgba(88, 88, 88, .2); */
+  background-color: var(--row-color);
 }
 
 .tor.sheet.actor .inventory .item-row.header {
@@ -499,19 +501,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: .4rem .6rem;
+  padding: .4rem .3rem;
   color: var(--blue-gray);
-  text-transform: capitalize;
 }
 
 .tor.sheet.actor .skill:nth-child(even) {
-  background-color: var(--blue-gray);
+  background-color: var(--row-color);
 }
 
 .tor.sheet.actor .skill .left {
   display: flex;
-  column-gap: .4rem;
+  column-gap: .2rem;
   font-weight: bold;
+  width: 100px;
 }
 
 .tor.sheet.actor .skill .left i.active {
@@ -526,7 +528,7 @@
 
 .tor.sheet.actor .skill .score {
   display: flex;
-  column-gap: .4rem;
+  column-gap: .34rem;
 }
 
 .tor.sheet.actor .skill .diamond-score {
@@ -535,4 +537,8 @@
   transform: rotate(45deg);
   border: 1px solid var(--text-color-light);
   border-radius: 2px;
+}
+
+.tor.sheet.actor .skill .diamond-score.active {
+  background-color: #9b282a;
 }

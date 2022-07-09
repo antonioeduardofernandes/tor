@@ -4,6 +4,7 @@ TOR.base = {
     emptySelect: "TOR.emptySelect",
     characteristics: "TOR.characteristics",
     controls: "TOR.controls",
+    skill:"TOR.skill",
     culture: "TOR.culture",
     rewards: "TOR.rewards",
     virtues: "TOR.virtues",
@@ -17,24 +18,19 @@ TOR.base = {
     standardOfLiving: "TOR.standardOfLiving",
 }
 
-TOR.strengthSkills = {
+TOR.skills = {
     awe: "TOR.awe",
     athletics: "TOR.athletics",
     awareness: "TOR.awareness",
     hunting: "TOR.hunting",
     song: "TOR.song",
     craft: "TOR.craft",
-}
-TOR.heartSkills = {
     enhearten: "TOR.enhearten",
     travel: "TOR.travel",
     insight: "TOR.insight",
     healing: "TOR.healing",
     courtesy: "TOR.courtesy",
     battle: "TOR.battle",
-
-}
-TOR.witsSkills = {
     persuade: "TOR.persuade",
     stealth: "TOR.stealth",
     scan: "TOR.scan",

@@ -274,11 +274,10 @@
             "templates": [
                 "base"
             ],
+            "equiped": true,
             "magical": false,
-            "skills": {
-                "first": {},
-                "second": {}
-            }
+            "firstSkill": "",
+            "secondSkill": ""
         }
     }
 }

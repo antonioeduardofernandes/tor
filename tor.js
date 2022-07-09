@@ -8,7 +8,6 @@ import TORActor from "./module/actor/entity.js"
 import { TORActorSheet } from "./module/actor/sheet.js"
 import { TORItemSheet } from "./module/item/sheet.js"
 
-
 // Import Handlebar Templates Module
 import { preloadHandlebarsTemplates } from "./module/helpers/templates.js"
 
@@ -21,8 +20,6 @@ Hooks.once("init", function () {
     CONFIG.TOR = TOR
     CONFIG.Actor.documentClass = TORActor;
     // CONFIG.Item.documentClass = TORItem;
-
-
 
     //Unregister default sheets
     Items.unregisterSheet("core", ItemSheet);

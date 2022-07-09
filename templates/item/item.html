@@ -29,10 +29,27 @@
     <div class="flexcolumn">
       <div class="section-header">Características</div>
       <div class="form-group">
-        <label class="stat">{{localize config.itemStats.load}}</label>
-        <input type="number" name="data.load" value="{{data.load}}">
+        <label class="stat">{{localize config.base.skill}} 1</label>
+        <select name="data.firstSkill">
+          {{#select data.firstSkill}}
+          <option value="">Selecione</option>
+          {{#each config.skills as |name key|}}
+          <option value="{{key}}">{{localize name}}</option>
+          {{/each}}
+          {{/select}}
+        </select>
       </div>
-
+      <div class="form-group">
+        <label class="stat">{{localize config.base.skill}} 2</label>
+        <select name="data.secondtSkill">
+          {{#select data.secondtSkill}}
+          <option value="">Selecione</option>
+          {{#each config.skills as |name key|}}
+          <option value="{{key}}">{{localize name}}</option>
+          {{/each}}
+          {{/select}}
+        </select>
+      </div>
   </section>
 
 

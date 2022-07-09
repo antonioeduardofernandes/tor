@@ -1,30 +1,87 @@
 <div class="skills-container">
     <div class="skill-column">
-        {{#each config.strengthSkills as |name key|}}
-        {{#with (lookup ../data.skills key) as |skill|}}
-        <div class="skill">
+        {{#each strengthSkills as |name|}}
+        {{#with (lookup ../data.skills name) as |skill|}}
+        <div class="skill" data-skill="{{name}}">
             <div class="left">
-                <a class="skill-control skill-favoured " data-skill="{{key}}">
+                <a class="skill-control skill-favoured">
                     <i class="far fa-circle {{#if skill.favoured}}active{{/if}}"></i>
                 </a>
-                <a><span>{{localize name}}</span></a>
+                <a class="rollable"><span>{{skill.label}}</span></a>
             </div>
             <div class="score">
-                <div class="diamond-score"></div>
-                <div class="diamond-score"></div>
-                <div class="diamond-score"></div>
-                <div class="diamond-score"></div>
-                <div class="diamond-score"></div>
-                <div class="diamond-score"></div>
+                <a class="skill-control skill-score diamond-score {{#if (gte skill.value 1)}}active{{/if}}"
+                    data-score=1></a>
+                <a class="skill-control skill-score diamond-score {{#if (gte skill.value 2)}}active{{/if}}"
+                    data-score=2></a>
+                <a class="skill-control skill-score diamond-score {{#if (gte skill.value 3)}}active{{/if}}"
+                    data-score=3></a>
+                <a class="skill-control skill-score diamond-score {{#if (gte skill.value 4)}}active{{/if}}"
+                    data-score=4></a>
+                <a class="skill-control skill-score diamond-score {{#if (gte skill.value 5)}}active{{/if}}"
+                    data-score=5></a>
+                <a class="skill-control skill-score diamond-score {{#if (gte skill.value 6)}}active{{/if}}"
+                    data-score=6></a>
             </div>
         </div>
         {{/with}}
         {{/each}}
     </div>
     <div class="skill-column">
-
+        {{#each heartSkills as |name|}}
+        {{#with (lookup ../data.skills name) as |skill|}}
+        <div class="skill" data-skill="{{name}}">
+            <div class="left">
+                <a class="skill-control skill-favoured">
+                    <i class="far fa-circle {{#if skill.favoured}}active{{/if}}"></i>
+                </a>
+                <a><span>{{skill.label}}</span></a>
+            </div>
+            <div class="score">
+                <a class="skill-control skill-score diamond-score {{#if (gte skill.value 1)}}active{{/if}}"
+                    data-score=1></a>
+                <a class="skill-control skill-score diamond-score {{#if (gte skill.value 2)}}active{{/if}}"
+                    data-score=2></a>
+                <a class="skill-control skill-score diamond-score {{#if (gte skill.value 3)}}active{{/if}}"
+                    data-score=3></a>
+                <a class="skill-control skill-score diamond-score {{#if (gte skill.value 4)}}active{{/if}}"
+                    data-score=4></a>
+                <a class="skill-control skill-score diamond-score {{#if (gte skill.value 5)}}active{{/if}}"
+                    data-score=5></a>
+                <a class="skill-control skill-score diamond-score {{#if (gte skill.value 6)}}active{{/if}}"
+                    data-score=6></a>
+            </div>
+        </div>
+        {{/with}}
+        {{/each}}
     </div>
     <div class="skill-column">
-
+        {{#each witsSkills as |name|}}
+        {{#with (lookup ../data.skills name) as |skill|}}
+        <div class="skill" data-skill="{{name}}">
+            <div class="left">
+                <a class="skill-control skill-favoured">
+                    <i class="far fa-circle {{#if skill.favoured}}active{{/if}}"></i>
+                </a>
+                <a><span>{{skill.label}}</span></a>
+            </div>
+            <div class="score">
+                <a class="skill-control skill-score diamond-score {{#if (gte skill.value 1)}}active{{/if}}"
+                    data-score=1></a>
+                <a class="skill-control skill-score diamond-score {{#if (gte skill.value 2)}}active{{/if}}"
+                    data-score=2></a>
+                <a class="skill-control skill-score diamond-score {{#if (gte skill.value 3)}}active{{/if}}"
+                    data-score=3></a>
+                <a class="skill-control skill-score diamond-score {{#if (gte skill.value 4)}}active{{/if}}"
+                    data-score=4></a>
+                <a class="skill-control skill-score diamond-score {{#if (gte skill.value 5)}}active{{/if}}"
+                    data-score=5></a>
+                <a class="skill-control skill-score diamond-score {{#if (gte skill.value 6)}}active{{/if}}"
+                    data-score=6></a>
+            </div>
+        </div>
+        {{/with}}
+        {{/each}}
     </div>
+
 </div>

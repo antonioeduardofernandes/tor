@@ -24,13 +24,37 @@ export class TORActorSheet extends ActorSheet {
     data.flags = actorData.flags
 
     if (actorData.type === "hero") {
+      this._prepareSkills(data)
       this._prepareItems(data)
-      // this._prepareSkills(data)
     }
 
     return data
+  }
 
+  // prepare each skill group to display on each column
+  _prepareSkills(data) {
+    const actorData = data.actor.data
 
+    let strengthSkills = []
+    let heartSkills = []
+    let witsSkills = []
+
+    for (let [skill, key] of Object.entries(actorData.data.skills)) {
+      key.label = game.i18n.localize(`TOR.${skill}`).titleCase()
+
+      if (key.attribute === "strength") {
+        strengthSkills.push(skill)
+      }
+      if (key.attribute === "heart") {
+        heartSkills.push(skill)
+      }
+      if (key.attribute === "wits") {
+        witsSkills.push(skill)
+      }
+    }
+    data.strengthSkills = strengthSkills
+    data.heartSkills = heartSkills
+    data.witsSkills = witsSkills
   }
 
   // prepare each item type
@@ -74,80 +98,77 @@ export class TORActorSheet extends ActorSheet {
     data.features = features
   }
 
-  // _prepareSkills(data) {
-  //   const strengthSkills = []
-  //   const heartSkills = []
-  //   const witsSkills = []
-
-
-  //   for (let [key, skill] of Object.entries(data.data.skills)) {
-  //     skill.label = game.i18n.localize(`TOR.${key}`).titleCase()
-  //     if (skill.attribute === "strength") {
-  //       strengthSkills.push(skill)
-  //     }
-  //     if (skill.attribute === "heart") {
-  //       heartSkills.push(skill)
-  //     }
-  //     if (skill.attribute === "wits") {
-  //       witsSkills.push(skill)
-  //     }
-  //   }
-
-  //   data.strengthSkills = strengthSkills
-  //   data.heartSkills = heartSkills
-  //   data.witsSkills = witsSkills
-  // }
 
   activateListeners(html) {
     super.activateListeners(html)
 
-    //delete item
-    html.find(".item-control.item-delete").click(event => {
-      event.preventDefault()
-      const div = event.currentTarget.closest(".item-row")
-      const item = this.actor.items.get(div.dataset.itemId)
-      return item.delete()
-    })
+    // owner only
+    if (this.actor.isOwner) {
+      //delete item
+      html.find(".item-control.item-delete").click(event => {
+        event.preventDefault()
+        const div = event.currentTarget.closest(".item-row")
+        const item = this.actor.items.get(div.dataset.itemId)
+        return item.delete()
+      })
 
-    //edit item
-    html.find(".item-control.item-edit").click(event => {
-      event.preventDefault()
-      const div = event.currentTarget.closest(".item-row")
-      const item = this.actor.items.get(div.dataset.itemId)
-      return item.sheet.render(true)
-    })
+      //edit item
+      html.find(".item-control.item-edit").click(event => {
+        event.preventDefault()
+        const div = event.currentTarget.closest(".item-row")
+        const item = this.actor.items.get(div.dataset.itemId)
+        return item.sheet.render(true)
+      })
 
-    //toggle equip status for item
-    html.find(".item-control.item-equip").click(event => {
-      event.preventDefault()
-      const div = event.currentTarget.closest(".item-row")
-      const item = this.actor.items.get(div.dataset.itemId)
-      return item.update({ "data.equiped": !item.data.data.equiped })
-    })
+      //toggle equip status for item
+      html.find(".item-control.item-equip").click(event => {
+        event.preventDefault()
+        const div = event.currentTarget.closest(".item-row")
+        const item = this.actor.items.get(div.dataset.itemId)
+        return item.update({ "data.equiped": !item.data.data.equiped })
+      })
 
-    //toggle twoHanded if versatile else returns
-    html.find(".item-control.item-wield").click(event => {
-      event.preventDefault()
-      const div = event.currentTarget.closest(".item-row")
-      const item = this.actor.items.get(div.dataset.itemId)
-      if (!item.data.data.wieldType.versatile) return
-      let newValue = item.data.data.wieldType.value === "1" ? "2" : "1"
-      return item.update({ "data.wieldType.value": newValue })
-    })
+      //toggle twoHanded if versatile else returns
+      html.find(".item-control.item-wield").click(event => {
+        event.preventDefault()
+        const div = event.currentTarget.closest(".item-row")
+        const item = this.actor.items.get(div.dataset.itemId)
+        if (!item.data.data.wieldType.versatile) return
+        let newValue = item.data.data.wieldType.value === "1" ? "2" : "1"
+        return item.update({ "data.wieldType.value": newValue })
+      })
 
-    //toggle skill favoured
-    html.find(".skill-control.skill-favoured").click(event => {
-      event.preventDefault()
-      const element = event.currentTarget.closest(".skill-control")
-      const skillName = element.dataset.skill
+      //toggle skill favoured
+      html.find(".skill-control.skill-favoured").click(event => {
+        event.preventDefault()
+        const element = event.currentTarget.closest(".skill")
+        const skillName = element.dataset.skill
 
-      let skill = this.actor.data.data.skills[skillName]
-      let isFavoured = skill.favoured
+        let skill = this.actor.data.data.skills[skillName]
+        let isFavoured = skill.favoured
 
-      return this.actor.update({ [`data.skills.${skillName}.favoured`]: !isFavoured })
-    })
+        return this.actor.update({ [`data.skills.${skillName}.favoured`]: !isFavoured })
+      })
 
+      // change skill value
+      html.find(".skill-control.skill-score").click(event => {
+        event.preventDefault()
+        const dataElement = event.currentTarget.closest(".skill")
+        const skillName = dataElement.dataset.skill
 
+        let currentScore = this.actor.data.data.skills[skillName].value
+
+        const scoreElement = event.currentTarget.closest(".skill-score")
+        let score = Number(scoreElement.dataset.score)
+
+        //if currentScore is already 1 toggle it to 0
+        // if (currentScore === 1 && score === 1) score = 0
+        if (currentScore === score) score = score - 1
+
+        return this.actor.update({ [`data.skills.${skillName}.value`]: score })
+      })
+    }
   }
+
 
 }
