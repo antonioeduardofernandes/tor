@@ -25,7 +25,7 @@ export class TORActorSheet extends ActorSheet {
 
     if (actorData.type === "hero") {
       this._prepareItems(data)
-      this._prepareSkills(data)
+      // this._prepareSkills(data)
     }
 
     return data
@@ -74,29 +74,29 @@ export class TORActorSheet extends ActorSheet {
     data.features = features
   }
 
-  _prepareSkills(data) {
-    const strengthSkills = []
-    const heartSkills = []
-    const witsSkills = []
+  // _prepareSkills(data) {
+  //   const strengthSkills = []
+  //   const heartSkills = []
+  //   const witsSkills = []
 
 
-    for (let [key, skill] of Object.entries(data.data.skills)) {
-      skill.name = game.i18n.localize(`TOR.${key}`).titleCase()
-      if (skill.attribute === "strength") {
-        strengthSkills.push(skill)
-      }
-      if (skill.attribute === "heart") {
-        heartSkills.push(skill)
-      }
-      if (skill.attribute === "wits") {
-        witsSkills.push(skill)
-      }
-    }
+  //   for (let [key, skill] of Object.entries(data.data.skills)) {
+  //     skill.label = game.i18n.localize(`TOR.${key}`).titleCase()
+  //     if (skill.attribute === "strength") {
+  //       strengthSkills.push(skill)
+  //     }
+  //     if (skill.attribute === "heart") {
+  //       heartSkills.push(skill)
+  //     }
+  //     if (skill.attribute === "wits") {
+  //       witsSkills.push(skill)
+  //     }
+  //   }
 
-    data.strengthSkills = strengthSkills
-    data.heartSkills = heartSkills
-    data.witsSkills = witsSkills
-  }
+  //   data.strengthSkills = strengthSkills
+  //   data.heartSkills = heartSkills
+  //   data.witsSkills = witsSkills
+  // }
 
   activateListeners(html) {
     super.activateListeners(html)
@@ -134,6 +134,19 @@ export class TORActorSheet extends ActorSheet {
       let newValue = item.data.data.wieldType.value === "1" ? "2" : "1"
       return item.update({ "data.wieldType.value": newValue })
     })
+
+    //toggle skill favoured
+    html.find(".skill-control.skill-favoured").click(event => {
+      event.preventDefault()
+      const element = event.currentTarget.closest(".skill-control")
+      const skillName = element.dataset.skill
+
+      let skill = this.actor.data.data.skills[skillName]
+      let isFavoured = skill.favoured
+
+      return this.actor.update({ [`data.skills.${skillName}.favoured`]: !isFavoured })
+    })
+
 
   }
 

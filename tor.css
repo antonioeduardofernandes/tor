@@ -496,11 +496,12 @@
 }
 
 .tor.sheet.actor .skill {
-  display: grid;
-  grid-template-columns: 100px 34px 90px;
+  display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: .4rem;
+  padding: .4rem .6rem;
+  color: var(--blue-gray);
+  text-transform: capitalize;
 }
 
 .tor.sheet.actor .skill:nth-child(even) {
@@ -508,16 +509,24 @@
 }
 
 .tor.sheet.actor .skill .left {
-  column-gap: .2rem;
+  display: flex;
+  column-gap: .4rem;
+  font-weight: bold;
 }
 
-.tor.sheet.actor .skill a {
+.tor.sheet.actor .skill .left i.active {
+  color: var(--blue-gray);
+  border-radius: 50%;
+  background-color: #9b282a;
+}
+
+.tor.sheet.actor .skill a span {
   color: var(--text-color-light);
 }
 
 .tor.sheet.actor .skill .score {
   display: flex;
-  justify-content: space-between;
+  column-gap: .4rem;
 }
 
 .tor.sheet.actor .skill .diamond-score {
