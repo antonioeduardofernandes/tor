@@ -16,6 +16,7 @@
     "ACTOR.TypeAdversary":"Adversário",
 
     "TOR.skill":"perícia",
+    "TOR.skillTest":"teste de perícia",
 
     "TOR.awe":"assombro",
     "TOR.athletics":"atletismo",

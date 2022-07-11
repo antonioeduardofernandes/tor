@@ -18,6 +18,7 @@ TOR.base = {
     standardOfLiving: "TOR.standardOfLiving",
 }
 
+
 TOR.skills = {
     awe: "TOR.awe",
     athletics: "TOR.athletics",

@@ -107,6 +107,24 @@
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
 }
 
+
+/* ----------------------------------------- */
+/*  DIALOG                                   */
+/* ----------------------------------------- */
+
+.tor-dialog input[type=number]::-webkit-inner-spin-button,
+.tor-dialog input[type=number]::-webkit-outer-spin-button {
+  opacity: 1;
+  appearance: auto;
+}
+
+.tor-dialog .flexrow {
+  display: flex;
+  align-items: center;
+}
+
+
+
 /* ----------------------------------------- */
 /*  NAVIGATION                                    */
 /* ----------------------------------------- */
@@ -511,7 +529,7 @@
 
 .tor.sheet.actor .skill .left {
   display: flex;
-  column-gap: .2rem;
+  column-gap: .4rem;
   font-weight: bold;
   width: 100px;
 }

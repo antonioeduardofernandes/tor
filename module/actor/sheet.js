@@ -98,77 +98,84 @@ export class TORActorSheet extends ActorSheet {
     data.features = features
   }
 
-
   activateListeners(html) {
     super.activateListeners(html)
 
-    // owner only
+    // Owner only listeners
     if (this.actor.isOwner) {
-      //delete item
-      html.find(".item-control.item-delete").click(event => {
-        event.preventDefault()
-        const div = event.currentTarget.closest(".item-row")
-        const item = this.actor.items.get(div.dataset.itemId)
-        return item.delete()
-      })
-
-      //edit item
-      html.find(".item-control.item-edit").click(event => {
-        event.preventDefault()
-        const div = event.currentTarget.closest(".item-row")
-        const item = this.actor.items.get(div.dataset.itemId)
-        return item.sheet.render(true)
-      })
-
-      //toggle equip status for item
-      html.find(".item-control.item-equip").click(event => {
-        event.preventDefault()
-        const div = event.currentTarget.closest(".item-row")
-        const item = this.actor.items.get(div.dataset.itemId)
-        return item.update({ "data.equiped": !item.data.data.equiped })
-      })
-
-      //toggle twoHanded if versatile else returns
-      html.find(".item-control.item-wield").click(event => {
-        event.preventDefault()
-        const div = event.currentTarget.closest(".item-row")
-        const item = this.actor.items.get(div.dataset.itemId)
-        if (!item.data.data.wieldType.versatile) return
-        let newValue = item.data.data.wieldType.value === "1" ? "2" : "1"
-        return item.update({ "data.wieldType.value": newValue })
-      })
-
-      //toggle skill favoured
-      html.find(".skill-control.skill-favoured").click(event => {
-        event.preventDefault()
-        const element = event.currentTarget.closest(".skill")
-        const skillName = element.dataset.skill
-
-        let skill = this.actor.data.data.skills[skillName]
-        let isFavoured = skill.favoured
-
-        return this.actor.update({ [`data.skills.${skillName}.favoured`]: !isFavoured })
-      })
-
-      // change skill value
-      html.find(".skill-control.skill-score").click(event => {
-        event.preventDefault()
-        const dataElement = event.currentTarget.closest(".skill")
-        const skillName = dataElement.dataset.skill
-
-        let currentScore = this.actor.data.data.skills[skillName].value
-
-        const scoreElement = event.currentTarget.closest(".skill-score")
-        let score = Number(scoreElement.dataset.score)
-
-        //if currentScore is already 1 toggle it to 0
-        // if (currentScore === 1 && score === 1) score = 0
-        if (currentScore === score) score = score - 1
-
-        return this.actor.update({ [`data.skills.${skillName}.value`]: score })
-      })
+      html.find(".skill-check").click(this._skillCheck.bind(this))
+      html.find(".item-control.item-delete").click(this._deleteItem.bind(this))
+      html.find(".item-control.item-edit").click(this._editItem.bind(this))
+      html.find(".item-control.item-equip").click(this._toggleEquipedStatus.bind(this))
+      html.find(".item-control.item-wield").click(this._toggleWieldType.bind(this))
+      html.find(".skill-control.skill-favoured").click(this._toggleSkillFavoured.bind(this))
+      html.find(".skill-control.skill-score").click(this._changeSkillValue.bind(this))
     }
   }
 
+  _skillCheck(event) {
+    event.preventDefault()
+    const dataElement = event.currentTarget.closest(".skill")
+    const skillName = dataElement.dataset.skill
+    this.actor.skillRoll(skillName)
+  }
+
+  _deleteItem(event) {
+    const div = event.currentTarget.closest(".item-row")
+    const item = this.actor.items.get(div.dataset.itemId)
+    return item.delete()
+  }
+
+  _editItem(event) {
+    event.preventDefault()
+    const div = event.currentTarget.closest(".item-row")
+    const item = this.actor.items.get(div.dataset.itemId)
+    return item.sheet.render(true)
+  }
+
+  _toggleEquipedStatus(event) {
+    event.preventDefault()
+    const div = event.currentTarget.closest(".item-row")
+    const item = this.actor.items.get(div.dataset.itemId)
+    return item.update({ "data.equiped": !item.data.data.equiped })
+  }
+
+  _toggleWieldType(event) {
+    event.preventDefault()
+    const div = event.currentTarget.closest(".item-row")
+    const item = this.actor.items.get(div.dataset.itemId)
+    if (!item.data.data.wieldType.versatile) return
+    let newValue = item.data.data.wieldType.value === "1" ? "2" : "1"
+    return item.update({ "data.wieldType.value": newValue })
+  }
+
+  _toggleSkillFavoured(event) {
+    event.preventDefault()
+    const element = event.currentTarget.closest(".skill")
+    const skillName = element.dataset.skill
+
+    let skill = this.actor.data.data.skills[skillName]
+    let isFavoured = skill.favoured
+
+    return this.actor.update({ [`data.skills.${skillName}.favoured`]: !isFavoured })
+
+  }
+
+  _changeSkillValue(event) {
+    event.preventDefault()
+    const dataElement = event.currentTarget.closest(".skill")
+    const skillName = dataElement.dataset.skill
+
+    let currentScore = this.actor.data.data.skills[skillName].value
+
+    const scoreElement = event.currentTarget.closest(".skill-score")
+    let score = Number(scoreElement.dataset.score)
+
+    //if currentScore is already 1 toggle it to 0
+    // if (currentScore === 1 && score === 1) score = 0
+    if (currentScore === score) score = score - 1
+
+    return this.actor.update({ [`data.skills.${skillName}.value`]: score })
+  }
 
 }
