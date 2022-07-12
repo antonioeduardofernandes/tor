@@ -38,7 +38,7 @@ export default class TORActor extends Actor {
         const skillValue = this.data.data.skills[skillName].value
         const tn = this.data.data.attributes[skill.attribute].tn
 
-        const dialogContent = await renderTemplate("systems/tor/templates/chat/skill-roll-dialog.html", {inspired:true, usingHope:true, type:"favoured"}) 
+        const dialogContent = await renderTemplate("systems/tor/templates/chat/skill-roll-dialog.html", { inspired: true, usingHope: true, type: "favoured" })
         let dialogTitle = await `${game.i18n.localize("TOR.skillTest").titleCase()}: ` + game.i18n.localize(`TOR.${skillName}`).titleCase()
 
         await new Dialog({

@@ -6,7 +6,7 @@ export class TORActorSheet extends ActorSheet {
       width: 800,
       height: 697,
       resizable: true,
-      tabs: [{ navSelector: ".sheet-navigation", contentSelector: ".sheet-body", initial: "skills" }]
+      tabs: [{ navSelector: ".sheet-navigation", contentSelector: ".sheet-body", initial: "inventory" }]
     });
   }
 
@@ -27,6 +27,8 @@ export class TORActorSheet extends ActorSheet {
       this._prepareSkills(data)
       this._prepareProficiencies(data)
       this._prepareItems(data)
+
+      data.treasure = actorData.data.treasure
     }
 
     return data
@@ -117,6 +119,7 @@ export class TORActorSheet extends ActorSheet {
     // Owner only listeners
     if (this.actor.isOwner) {
       html.find(".skill-check").click(this._skillCheck.bind(this))
+      html.find(".create-item").click(this._createItem.bind(this))
       html.find(".item-control.item-delete").click(this._deleteItem.bind(this))
       html.find(".item-control.item-edit").click(this._editItem.bind(this))
       html.find(".item-control.item-equip").click(this._toggleEquipedStatus.bind(this))
@@ -131,6 +134,16 @@ export class TORActorSheet extends ActorSheet {
     const dataElement = event.currentTarget.closest(".skill")
     const skillName = dataElement.dataset.skill
     this.actor.skillRoll(skillName)
+  }
+
+  _createItem(event) {
+    event.preventDefault()
+    const itemData = {
+      name: "nome",
+      type: "item",
+      data: "",
+    };
+    this.actor.createEmbeddedDocuments("Item", [itemData])
   }
 
   _deleteItem(event) {

@@ -349,6 +349,15 @@
   overflow-y: scroll;
 }
 
+.tor.sheet.actor .inventory .treasure {
+  display: flex;
+  align-items: center;
+  column-gap: .2rem;
+  width: 120px;
+  font-family: var(--modesto);
+  font-size: 18px;
+}
+
 .tor.sheet.actor .inventory .items-container .item-row {
   display: flex;
   width: 100%;
@@ -386,11 +395,10 @@
   width: 30px;
   background-size: cover;
   border: none;
-  cursor: pointer;
   border-radius: 4px;
 }
 
-.tor.sheet.actor .inventory .item-image:hover {
+.tor.sheet.actor .inventory .item-image.rollable:hover {
   background-image: url("./icons/svg/d12black.svg") !important;
   opacity: .6;
 }

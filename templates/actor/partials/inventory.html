@@ -1,4 +1,10 @@
 <div class="inventory">
+    <div class="treasure">
+        <i class="fas fa-coins"></i>
+        <div class="title">Tesouro: </div>
+        <input type="number" name="data.treasure" value="{{data.treasure}}">
+    </div>
+
     <div class="items-container">
         <div class="item-row header">
             <div class="left-content">
@@ -15,7 +21,7 @@
         {{#each weapons as |item id|}}
         <div class="item-row" data-item-id="{{item._id}}">
             <div class="left-content">
-                <div class="item-image" style="background-image: url({{item.img}});"></div>
+                <div class="item-image rollable" style="background-image: url({{item.img}});"></div>
                 <div>{{item.name}}</div>
             </div>
             <div class="right-content">
@@ -75,6 +81,9 @@
                 <div class="title">Itens</div>
             </div>
             <div class="right-content">
+                <a class="create-item">
+                    <div><i class="fas fa-plus"></i> Novo</div>
+                </a>
                 <div>{{localize config.base.controls}}</div>
             </div>
         </div>
