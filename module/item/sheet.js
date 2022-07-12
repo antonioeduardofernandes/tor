@@ -18,6 +18,7 @@ export class TORItemSheet extends ItemSheet {
     }
     if (this.object.data.type === "trait") {
       this.options.height = this.position.height = 380;
+      this.options.height = this.position.width = 614;
     }
   }
 

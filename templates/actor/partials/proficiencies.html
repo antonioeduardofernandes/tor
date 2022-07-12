@@ -1,0 +1,25 @@
+<div class="skills-container">
+    <div class="skill-column">
+        {{#each data.proficiencies as |key name|}}
+        <div class="skill" data-type="proficiencies" data-skill="{{name}}">
+            <div class="left">
+                <a class="skill-check rollable"><span>{{key.label}}</span></a>
+            </div>
+            <div class="score">
+                <a class="skill-control skill-score diamond-score {{#if (gte key.value 1)}}active{{/if}}"
+                    data-score=1></a>
+                <a class="skill-control skill-score diamond-score {{#if (gte key.value 2)}}active{{/if}}"
+                    data-score=2></a>
+                <a class="skill-control skill-score diamond-score {{#if (gte key.value 3)}}active{{/if}}"
+                    data-score=3></a>
+                <a class="skill-control skill-score diamond-score {{#if (gte key.value 4)}}active{{/if}}"
+                    data-score=4></a>
+                <a class="skill-control skill-score diamond-score {{#if (gte key.value 5)}}active{{/if}}"
+                    data-score=5></a>
+                <a class="skill-control skill-score diamond-score {{#if (gte key.value 6)}}active{{/if}}"
+                    data-score=6></a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

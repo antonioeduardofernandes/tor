@@ -228,6 +228,11 @@
   width: 320px;
   border: 1px solid transparent;
   font-size: 30px;
+  padding: 1.1rem 0;
+}
+
+.tor.sheet form header img {
+  border-radius: 4px;
 }
 
 /* ----------------------------------------- */
@@ -238,10 +243,7 @@
   display: grid;
   grid-template-columns: 100px 1fr;
   align-items: center;
-}
-
-.tor.sheet form header input {
-  padding: 1.4rem 0;
+  border-bottom: var(--grooved-divider);
 }
 
 
@@ -274,6 +276,7 @@
   display: flex;
   font-size: 20px;
   justify-content: space-between;
+  height: 100px;
 }
 
 .tor.sheet.actor .resource {
@@ -281,8 +284,9 @@
   flex-flow: column;
   align-items: center;
   width: 100%;
+  height: 100%;
+
   border-right: var(--grooved-divider);
-  padding: .2rem;
 }
 
 .tor.sheet.actor .resource:last-of-type {
@@ -320,6 +324,12 @@
 .tor.sheet.actor .resource .footer input {
   font-size: 20px;
   height: 20px;
+}
+
+.tor.sheet.actor .skill-tab-bottom {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  column-gap: 1rem;
 }
 
 /* ----------------------------------------- */

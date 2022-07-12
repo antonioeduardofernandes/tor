@@ -3,6 +3,8 @@ export const preloadHandlebarsTemplates = async function () {
         // Actor Partials
         "systems/tor/templates/actor/partials/resources.html",
         "systems/tor/templates/actor/partials/skills.html",
+        "systems/tor/templates/actor/partials/skill-items.html",
+        "systems/tor/templates/actor/partials/proficiencies.html",
         "systems/tor/templates/actor/partials/inventory.html",
         "systems/tor/templates/actor/partials/features.html",
 

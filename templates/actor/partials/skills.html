@@ -2,7 +2,7 @@
     <div class="skill-column">
         {{#each strengthSkills as |name|}}
         {{#with (lookup ../data.skills name) as |skill|}}
-        <div class="skill" data-skill="{{name}}">
+        <div class="skill" data-type="skills" data-skill="{{name}}">
             <div class="left">
                 <a class="skill-control skill-favoured">
                     <i class="far fa-circle {{#if skill.favoured}}active{{/if}}"></i>
@@ -30,12 +30,12 @@
     <div class="skill-column">
         {{#each heartSkills as |name|}}
         {{#with (lookup ../data.skills name) as |skill|}}
-        <div class="skill" data-skill="{{name}}">
+        <div class="skill" data-type="skills" data-skill="{{name}}">
             <div class="left">
                 <a class="skill-control skill-favoured">
                     <i class="far fa-circle {{#if skill.favoured}}active{{/if}}"></i>
                 </a>
-                <a  class="skill-check rollable"><span>{{skill.label}}</span></a>
+                <a class="skill-check rollable"><span>{{skill.label}}</span></a>
             </div>
             <div class="score">
                 <a class="skill-control skill-score diamond-score {{#if (gte skill.value 1)}}active{{/if}}"
@@ -58,12 +58,12 @@
     <div class="skill-column">
         {{#each witsSkills as |name|}}
         {{#with (lookup ../data.skills name) as |skill|}}
-        <div class="skill" data-skill="{{name}}">
+        <div class="skill" data-type="skills" data-skill="{{name}}">
             <div class="left">
                 <a class="skill-control skill-favoured">
                     <i class="far fa-circle {{#if skill.favoured}}active{{/if}}"></i>
                 </a>
-                <a  class="skill-check rollable"><span>{{skill.label}}</span></a>
+                <a class="skill-check rollable"><span>{{skill.label}}</span></a>
             </div>
             <div class="score">
                 <a class="skill-control skill-score diamond-score {{#if (gte skill.value 1)}}active{{/if}}"

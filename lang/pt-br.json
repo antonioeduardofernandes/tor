@@ -1,5 +1,7 @@
 {
     "ITEM.TypeCulture": "Cultura",
+    "ITEM.TypeCalling": "Chamado",
+    "ITEM.TypeBlessing": "Bênção Cultural",
     "ITEM.TypeArmor": "Armadura",
     "ITEM.TypeWeapon": "Arma",
     "ITEM.TypeShield": "Escudo",

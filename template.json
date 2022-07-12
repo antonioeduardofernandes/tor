@@ -193,9 +193,11 @@
             "item",
             "mount",
             "culture",
+            "calling",
             "virtue",
             "reward",
             "trait",
+            "blessing",
             "fellAbility"
         ],
         "templates": {
@@ -262,6 +264,16 @@
             "endurance": 10,
             "hope": 10,
             "parry": 10
+        },
+        "calling": {
+            "templates": [
+                "base"
+            ]
+        },
+        "blessing": {
+            "templates": [
+                "base"
+            ]
         },
         "mount": {
             "templates": [

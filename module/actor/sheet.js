@@ -25,6 +25,7 @@ export class TORActorSheet extends ActorSheet {
 
     if (actorData.type === "hero") {
       this._prepareSkills(data)
+      this._prepareProficiencies(data)
       this._prepareItems(data)
     }
 
@@ -32,6 +33,13 @@ export class TORActorSheet extends ActorSheet {
   }
 
   // prepare each skill group to display on each column
+  _prepareProficiencies(data) {
+    const actorData = data.actor.data
+    for (let [proficiency, key] of Object.entries(actorData.data.proficiencies)) {
+      key.label = game.i18n.localize(`TOR.${proficiency}`).titleCase()
+    }
+  }
+
   _prepareSkills(data) {
     const actorData = data.actor.data
 
@@ -60,14 +68,18 @@ export class TORActorSheet extends ActorSheet {
   // prepare each item type
   _prepareItems(data) {
 
+    const miscItems = []
+    const traits = []
     const weapons = []
     const armor = []
-    const miscItems = []
-    const features = []
     const virtues = []
     const rewards = []
+    const features = []
 
     for (let item of data.items) {
+      if (item.type === "fellAbility") {
+        ui.warnings.error("Não é possível atribuir uma Habilidade Terrível a um herói")
+      }
       if (item.type === "weapon") {
         weapons.push(item)
       }
@@ -83,10 +95,10 @@ export class TORActorSheet extends ActorSheet {
       if (item.type === "reward") {
         rewards.push(item)
       }
-      if (item.type === "fellAbility") {
-        ui.warnings.error("Não é possível atribuir uma Habilidade Terrível a um herói")
+      if (item.type === "trait") {
+        traits.push(item)
       }
-      if (item.type === "culture" || item.type === "trait") {
+      if (item.type === "culture" || item.type === "calling" || item.type === "blessing") {
         features.push(item)
       }
     }
@@ -96,6 +108,7 @@ export class TORActorSheet extends ActorSheet {
     data.virtues = virtues
     data.rewards = rewards
     data.features = features
+    data.traits = traits
   }
 
   activateListeners(html) {
@@ -164,9 +177,10 @@ export class TORActorSheet extends ActorSheet {
   _changeSkillValue(event) {
     event.preventDefault()
     const dataElement = event.currentTarget.closest(".skill")
-    const skillName = dataElement.dataset.skill
+    let type = dataElement.dataset.type
 
-    let currentScore = this.actor.data.data.skills[skillName].value
+    let name = dataElement.dataset.skill
+    let currentScore = this.actor.data.data[type][name].value
 
     const scoreElement = event.currentTarget.closest(".skill-score")
     let score = Number(scoreElement.dataset.score)
@@ -175,7 +189,7 @@ export class TORActorSheet extends ActorSheet {
     // if (currentScore === 1 && score === 1) score = 0
     if (currentScore === score) score = score - 1
 
-    return this.actor.update({ [`data.skills.${skillName}.value`]: score })
+    return this.actor.update({ [`data.${type}.${name}.value`]: score })
   }
 
 }
