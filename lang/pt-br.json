@@ -20,6 +20,10 @@
     "TOR.skill":"perícia",
     "TOR.skillTest":"teste de perícia",
 
+    "TOR.strength": "força",
+    "TOR.heart": "coração",
+    "TOR.wits": "esperteza",
+
     "TOR.awe":"assombro",
     "TOR.athletics":"atletismo",
     "TOR.awareness":"percepção",

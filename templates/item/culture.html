@@ -4,40 +4,24 @@
 
     <div class="stats_container">
 
-      <div class="row">
+      <div>
         <div class="stats">
           <input name="name" type="text" value="{{item.name}}" placeholder="Nome" />
           <span class="header-stat">{{itemType}}</span>
         </div>
       </div>
-
-      <div class="row">
-        <div class="stats">
-          <span class="header-stat">{{armorType}}</span>
-        </div>
-      </div>
     </div>
-
   </header>
 
-  <section class="sheet-body">
-
-    <div class="description">
-      {{editor content=data.description target="data.description" button=true editable=editable}}
-    </div>
-
-    <div class="flexcolumn">
-      <div class="section-header">Características</div>
-      <div class="form-group">
-        <label class="stat">{{localize config.standardOfLiving}}</label>
-        <input type="text" name="data.load" value="{{data.load}}">
-      </div>
-      
-      <div class="section-header">Estatísticas Derivadas</div>
-      <div class="section-header">Características Especiais</div>
-  </section>
 
 
-
+  <div class="description">
+    {{editor content=data.description target="data.description" button=true editable=editable}}
+  </div>
+  <div class="section-header">{{localize config.base.characteristics}}</div>
+  <div class="form-group">
+    <label class="stat">Resistência Base</label>
+    <input type="text" name="item.data.baseEndurance" value="{{item.data.baseEndurance}}">
+  </div>
 
 </form>

@@ -14,31 +14,29 @@
 
   </header>
 
-  <section class="sheet-body">
 
-    <div class="description">
-      {{editor content=data.description target="data.description" button=true editable=editable}}
+  <div class="description">
+    {{editor content=data.description target="data.description" button=true editable=editable}}
+  </div>
+
+  <div class="flexcolumn">
+    <div class="section-header">Características</div>
+    <div class="form-group">
+      <label class="stat">{{localize config.itemStats.vigour}}</label>
+      <input type="number" name="data.vigour" value="{{data.vigour}}">
     </div>
 
-    <div class="flexcolumn">
-      <div class="section-header">Características</div>
-      <div class="form-group">
-        <label class="stat">{{localize config.itemStats.vigour}}</label>
-        <input type="number" name="data.vigour" value="{{data.vigour}}">
-      </div>
-
-      <div class="form-group">
-        <label class="stat">{{localize config.itemStats.minimumLiving}}</label>
-        <select name="data.minimumLiving">
-          {{#select data.minimumLiving}}
-          <option value="">Selecionar</option>
-          {{#each config.standardOfLiving as |name key|}}
-          <option value="{{key}}">{{localize name}}</option>
-          {{/each}}
-          {{/select}}
-        </select>
-      </div>
-  </section>
+    <div class="form-group">
+      <label class="stat">{{localize config.itemStats.minimumLiving}}</label>
+      <select name="data.minimumLiving">
+        {{#select data.minimumLiving}}
+        <option value="">Selecionar</option>
+        {{#each config.standardOfLiving as |name key|}}
+        <option value="{{key}}">{{localize name}}</option>
+        {{/each}}
+        {{/select}}
+      </select>
+    </div>
 
 
 

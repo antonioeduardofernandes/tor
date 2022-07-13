@@ -6,7 +6,7 @@ export class TORActorSheet extends ActorSheet {
       width: 800,
       height: 697,
       resizable: true,
-      tabs: [{ navSelector: ".sheet-navigation", contentSelector: ".sheet-body", initial: "inventory" }]
+      tabs: [{ navSelector: ".sheet-navigation", contentSelector: ".sheet-body", initial: "skills" }]
     });
   }
 
@@ -28,6 +28,8 @@ export class TORActorSheet extends ActorSheet {
       this._prepareProficiencies(data)
       this._prepareItems(data)
 
+
+      // TODO define treasure in entity to get standard of living based on treasure points earned
       data.treasure = actorData.data.treasure
     }
 
@@ -119,7 +121,7 @@ export class TORActorSheet extends ActorSheet {
     // Owner only listeners
     if (this.actor.isOwner) {
       html.find(".skill-check").click(this._skillCheck.bind(this))
-      html.find(".create-item").click(this._createItem.bind(this))
+      html.find(".create-item").click(this._createUsefulItem.bind(this))
       html.find(".item-control.item-delete").click(this._deleteItem.bind(this))
       html.find(".item-control.item-edit").click(this._editItem.bind(this))
       html.find(".item-control.item-equip").click(this._toggleEquipedStatus.bind(this))
@@ -136,7 +138,7 @@ export class TORActorSheet extends ActorSheet {
     this.actor.skillRoll(skillName)
   }
 
-  _createItem(event) {
+  _createUsefulItem(event) {
     event.preventDefault()
     const itemData = {
       name: "nome",
@@ -176,6 +178,8 @@ export class TORActorSheet extends ActorSheet {
   }
 
   _toggleSkillFavoured(event) {
+    if (!event.shiftKey) return
+
     event.preventDefault()
     const element = event.currentTarget.closest(".skill")
     const skillName = element.dataset.skill
@@ -189,6 +193,10 @@ export class TORActorSheet extends ActorSheet {
 
   _changeSkillValue(event) {
     event.preventDefault()
+
+    // shift key press
+    if (!event.shiftKey) return
+
     const dataElement = event.currentTarget.closest(".skill")
     let type = dataElement.dataset.type
 

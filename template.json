@@ -10,12 +10,8 @@
             "background": "",
             "fellowshipFocus": [],
             "traits": [],
-            "culture": "",
-            "culturalBlessing": "",
             "standardOfLiving": "",
             "treasure": 0,
-            "calling": "",
-            "shadowPath": "",
             "resources": {
                 "hope": {
                     "current": 10,
@@ -261,9 +257,9 @@
                 "base"
             ],
             "standardOfLiving": "",
-            "endurance": 10,
-            "hope": 10,
-            "parry": 10
+            "baseEndurance": 10,
+            "baseHope": 10,
+            "baseParry": 10
         },
         "calling": {
             "templates": [

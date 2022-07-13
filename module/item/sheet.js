@@ -4,7 +4,7 @@ export class TORItemSheet extends ItemSheet {
     super(...args);
 
     // Expand the default size of the class sheet
-    if (this.object.data.type === "weapon") {
+    if (this.object.data.type === "weapon"|| this.object.data.type === "culture") {
       this.options.height = this.position.height = 670;
     }
     if (this.object.data.type === "armor") {
