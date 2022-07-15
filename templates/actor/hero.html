@@ -2,7 +2,7 @@
 
   <!-- HEADER -->
   <header>
-    <img src="{{actor.img}}" title="{{actor.name}}" data-edit="img" />
+    <img class="header-img" src="{{actor.img}}" title="{{actor.name}}" data-edit="img" />
 
     <div class="stats_container">
       <div class="stats">
@@ -30,9 +30,9 @@
         <div class="attributes">
           {{#each data.attributes as |key attribute|}}
           <div class="attribute">
-            <div class="left">{{attribute}} <input name="data.attributes.{{attribute}}.value" type="number"
+            <div class="left">{{key.label}} <input name="data.attributes.{{attribute}}.value" type="number"
                 value="{{key.value}}" /></div>
-            <div class="right">TN {{key.tn}}</div>
+            <div class="right">{{localize "TOR.tn"}} {{key.tn}}</div>
           </div>
           {{/each}}
         </div>

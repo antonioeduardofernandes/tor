@@ -23,6 +23,7 @@
                 }
             },
             "conditions": {
+                "wounded": false,
                 "weary": false,
                 "miserable": false,
                 "poisoned": false,

@@ -1,49 +1,73 @@
 <div class="resources_container">
+
   <div class="resource">
-    <div class="title">Resistência</div>
+    <div class="title">{{localize "TOR.endurance"}}</div>
     <div class="values">
       <input type="number" name="data.resources.endurance.current" value="{{data.resources.endurance.current}}">
       <span>/</span>
       <input type="number" name="data.resources.endurance.max" value="{{data.resources.endurance.max}}">
     </div>
-    <div class="footer">
-      <span>Atual</span>
-      <span>Max</span>
-    </div>
+    <button>{{localize "TOR.rest"}}</button>
   </div>
 
   <div class="single resource">
-    <div class="title">Carga</div>
-    <input type="number" name="" value="10">
+    <div>
+      <div class="title">{{localize "TOR.load"}}</div>
+      <input type="number" name="" value="10">
+    </div>
+    <div class="footer">
+      <span>{{localize "TOR.fatigue"}}</span>
+      <input type="number" value=10>
+    </div>
   </div>
 
 
   <div class="resource">
-    <div class="title">Esperança</div>
+    <div class="title">{{localize "TOR.hope"}}</div>
     <div class="values">
       <input type="number" name="data.resources.hope.current" value="{{data.resources.hope.current}}">
       <span>/</span>
       <input type="number" name="data.resources.hope.max" value="{{data.resources.hope.max}}">
     </div>
     <div class="footer">
-      <span>Atual</span>
-      <span>Max</span>
+      <span>{{localize "TOR.shadow"}}</span>
+      <input type="number" value=10>
     </div>
   </div>
 
-  <div class="single resource">
-    <div class="title">Sombra</div>
-    <input type="number" name="" value="1">
-  </div>
 
   <div class="single resource">
-    <div class="title">Valor</div>
-    <input type="number" name="" value="1">
+    <div class="title">{{localize "TOR.parry"}}</div>
+    <input type="number" name="" value="16">
+    <div class="footer">
+      <span>{{localize "TOR.protection"}} </span>
+      <div>1d</div>
+    </div>
   </div>
 
-  <div class="single resource">
-    <div class="title">Sabedoria</div>
-    <input type="number" name="" value="1">
+  <div class="single resource ">
+    <div class="title">{{localize "TOR.conditions"}}</div>
+    <div class="status">
+      <a title="{{localize config.conditions.wounded}}" data-tooltip=""
+        class="status-icon {{#if data.conditions.wounded}}active{{/if}}" data-status="wounded"><img
+          src="./icons/status/wounded.webp" alt=""></a>
+      <a title="{{localize config.conditions.weary}}" class="status-icon {{#if data.conditions.weary}}active{{/if}}"
+        data-status="weary"><img src="./icons/status/weary.png" alt=""></a>
+      <a title="{{localize config.conditions.miserable}}"
+        class="status-icon {{#if data.conditions.miserable}}active{{/if}}" data-status="miserable"><img
+          src="./icons/status/miserable.webp" alt=""></a>
+    </div>
+  </div>
+
+  <div class="resource">
+    <div class="stature">
+      <div>{{localize "TOR.valour"}}</div>
+      <input type="number" name="" value="1">
+    </div>
+    <div class="stature">
+      <div>{{localize "TOR.wisdom"}}</div>
+      <input type="number" name="" value="1">
+    </div>
   </div>
 
 </div>

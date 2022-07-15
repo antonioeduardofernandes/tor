@@ -3,8 +3,8 @@ export class TORActorSheet extends ActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ["tor", "sheet", "actor", "hero"],
-      width: 800,
-      height: 697,
+      width: 820,
+      height: 690,
       resizable: true,
       tabs: [{ navSelector: ".sheet-navigation", contentSelector: ".sheet-body", initial: "skills" }]
     });
@@ -26,6 +26,7 @@ export class TORActorSheet extends ActorSheet {
     if (actorData.type === "hero") {
       this._prepareSkills(data)
       this._prepareProficiencies(data)
+      this._prepareAttributes(data)
       this._prepareItems(data)
 
 
@@ -34,6 +35,14 @@ export class TORActorSheet extends ActorSheet {
     }
 
     return data
+  }
+
+  //prepare attributes labels
+  _prepareAttributes(data) {
+    const actorData = data.actor.data
+    for (let [attribute, key] of Object.entries(actorData.data.attributes)) {
+      key.label = game.i18n.localize(`TOR.${attribute}`).titleCase()
+    }
   }
 
   // prepare each skill group to display on each column
@@ -121,6 +130,7 @@ export class TORActorSheet extends ActorSheet {
     // Owner only listeners
     if (this.actor.isOwner) {
       html.find(".skill-check").click(this._skillCheck.bind(this))
+      html.find(".status-icon").click(this._toggleStatus.bind(this))
       html.find(".create-item").click(this._createUsefulItem.bind(this))
       html.find(".item-control.item-delete").click(this._deleteItem.bind(this))
       html.find(".item-control.item-edit").click(this._editItem.bind(this))
@@ -129,6 +139,14 @@ export class TORActorSheet extends ActorSheet {
       html.find(".skill-control.skill-favoured").click(this._toggleSkillFavoured.bind(this))
       html.find(".skill-control.skill-score").click(this._changeSkillValue.bind(this))
     }
+  }
+
+  _toggleStatus(event) {
+    event.preventDefault()
+    const button = event.currentTarget.closest(".status-icon")
+    let statusName = button.dataset.status
+    let currentStatus = this.actor.data.data.conditions[statusName]
+    return this.actor.update({ [`data.conditions.${statusName}`]: !currentStatus })
   }
 
   _skillCheck(event) {

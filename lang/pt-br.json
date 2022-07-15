@@ -17,6 +17,22 @@
     "ACTOR.TypePatron":"Patrono",
     "ACTOR.TypeAdversary":"Adversário",
 
+    "TOR.tn":"na",
+    "TOR.targetNumber":"número alvo",
+    "TOR.valour":"valor",
+    "TOR.wisdom":"sabedoria",
+    "TOR.endurance":"resistência",
+    "TOR.hope":"esperança",
+    "TOR.shadow":"sombra",
+    "TOR.fatigue":"fadiga",
+    "TOR.rest":"descanso",
+    "TOR.conditions":"condições",
+
+    "TOR.wounded":"ferido",
+    "TOR.weary":"exausto",
+    "TOR.miserable":"abatido",
+    "TOR.poisoned":"envenenado",
+    
     "TOR.skill":"perícia",
     "TOR.skillTest":"teste de perícia",
 
