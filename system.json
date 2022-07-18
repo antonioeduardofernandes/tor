@@ -8,14 +8,17 @@
   "minimumCoreVersion": "9",
   "compatibleCoreVersion": "9",
   "esmodules": [
-    "tor.js"
+    "tor.js",
+    "greensock/esm/all.js"
   ],
-  "styles": [ "tor.css"],
+  "styles": [
+    "tor.css"
+  ],
   "languages": [
     {
-      "lang":"en",
-      "name":"English",
-      "path":"lang/en.json"
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
     },
     {
       "lang": "pt-br",

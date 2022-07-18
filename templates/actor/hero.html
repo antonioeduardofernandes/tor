@@ -1,7 +1,22 @@
 <form class="{{cssClass}}" flexcol autocomplete="off">
 
+  <nav class="sheet-navigation tabs" data-group="primary">
+    <div class="nav-indicator"></div>
+    <div class="nav-items">
+      <a class="item active" data-tab="skills" data-position=-85>Perícias</a>
+      <a class="item" data-tab="features" data-position=82>Características</a>
+      <a class="item" data-tab="inventory" data-position=268>Inventário</a>
+      <a class="item" data-tab="effects" data-position=414>Efeitos</a>
+      <a class="item" data-tab="background" data-position=548>História</a>
+    </div>
+    <a>
+      <div class="close-button"></div>
+
+    </a>
+  </nav>
+
   <!-- HEADER -->
-  <header>
+  <!-- <header>
     <img class="header-img" src="{{actor.img}}" title="{{actor.name}}" data-edit="img" />
 
     <div class="stats_container">
@@ -12,19 +27,11 @@
       </div>
       {{> "systems/tor/templates/actor/partials/resources.html"}}
     </div>
-  </header>
+  </header> -->
 
-  <!-- NAVIGATION -->
-  <nav class="sheet-navigation tabs" data-group="primary">
-    <a class="item active" data-tab="skills">Perícias</a>
-    <a class="item" data-tab="features">Características</a>
-    <a class="item" data-tab="inventory">Inventário</a>
-    <a class="item" data-tab="effects">Efeitos</a>
-    <a class="item" data-tab="background">História</a>
-  </nav>
 
   <!-- BODY -->
-  <section class="sheet-body">
+  <!-- <section class="sheet-body">
     <div class="tab" data-group="primary" data-tab="skills">
       <div class="skills">
         <div class="attributes">
@@ -54,5 +61,5 @@
     </div>
     <div class="tab" data-group="primary" data-tab="background">
     </div>
-  </section>
+  </section> -->
 </form>

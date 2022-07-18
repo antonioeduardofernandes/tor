@@ -1,11 +1,13 @@
+import gsap from "/scripts/greensock/esm/all.js";
+
 export class TORActorSheet extends ActorSheet {
 
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ["tor", "sheet", "actor", "hero"],
-      width: 820,
-      height: 690,
-      resizable: true,
+      width: 900,
+      height: 684,
+      resizable: false,
       tabs: [{ navSelector: ".sheet-navigation", contentSelector: ".sheet-body", initial: "skills" }]
     });
   }
@@ -45,7 +47,7 @@ export class TORActorSheet extends ActorSheet {
     }
   }
 
-  // prepare each skill group to display on each column
+  // prepare each weapon proficiency to display on each column
   _prepareProficiencies(data) {
     const actorData = data.actor.data
     for (let [proficiency, key] of Object.entries(actorData.data.proficiencies)) {
@@ -129,6 +131,9 @@ export class TORActorSheet extends ActorSheet {
 
     // Owner only listeners
     if (this.actor.isOwner) {
+      html.find(".sheet-navigation .item").click(this._toggleNav.bind(this))
+      html.find(".sheet-navigation .close-button").click(this._closeSheet.bind(this))
+
       html.find(".skill-check").click(this._skillCheck.bind(this))
       html.find(".status-icon").click(this._toggleStatus.bind(this))
       html.find(".create-item").click(this._createUsefulItem.bind(this))
@@ -139,6 +144,18 @@ export class TORActorSheet extends ActorSheet {
       html.find(".skill-control.skill-favoured").click(this._toggleSkillFavoured.bind(this))
       html.find(".skill-control.skill-score").click(this._changeSkillValue.bind(this))
     }
+  }
+
+  _closeSheet(event) {
+    event.preventDefault()
+    this.close()
+  }
+
+  _toggleNav(event) {
+    event.preventDefault()
+    let element = event.currentTarget.closest(".item")
+    let left = element.dataset.position
+    gsap.to(".nav-indicator", { left, duration: .3, ease: "sine.inOut"})
   }
 
   _toggleStatus(event) {

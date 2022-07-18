@@ -12,21 +12,12 @@
         <input type="checkbox" class="inspired" {{checked inspired}}>
     </div>
     <div class="form-group">
-        <div class="radio-group">
-            <input class="favouredStatus favoured" type="radio" name="type" value="favoured" {{#if (eq type "favoured"
-                )}} checked {{/if}} />
-            <label class="stat">Favorecido</label>
-        </div>
-        <div class="radio-group">
-            <input class="favouredStatus" type="radio" name="type" value="illFavoured" {{#if (eq type "normal" )}}
-                checked {{/if}}>
-            <label class="stat">Normal</label>
-        </div>
-        <div class="radio-group">
-            <input class="favouredStatus illFavoured" type="radio" name="type" value="illFavoured" {{#if (eq
-                type "illFavoured" )}} checked {{/if}}>
-            <label class="stat">Desfavorecido</label>
-        </div>
+        <label class="stat">Tipo de rolagem</label>
+        <select name="">
+            <option value="">Normal</option>
+            <option value="">Favorecido</option>
+            <option value="">Desfavorecido</option>
+        </select>
     </div>
 
 </form>
